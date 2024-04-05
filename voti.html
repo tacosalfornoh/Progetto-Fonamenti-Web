@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="it">
   <head>
-    <title>Voti</title>
+    <title><?html echo getImpostazioni()['website_name']; ?></title>
+    <meta name="description" content="<?html echo getImpostazioni()['website_desc']; ?>">
+    <meta name="author" content="<?html echo getImpostazioni()['website_author']; ?>">
+    <meta name="keywords" content="<?html echo getImpostazioni()['website_keywords']; ?>" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <script
       src="https://kit.fontawesome.com/457d18dfca.js"
       crossorigin="anonymous"
@@ -12,7 +14,7 @@
   </head>
   <body>
     <header>
-      <nav>
+      <nav id="menu-navigation">
         <ul>
           <li>
             <a href="index.html">Home</a>
@@ -37,10 +39,10 @@
           />
         </a>
       </nav>
-      <nav class="box" id="navigation-bar">
+      <nav id="user-navigation">
         <ul>
           <li>
-            <a href="profilo.html">profilo</a>
+            <a href="profilo.html">Profilo</a>
           </li>
           <li>
             <a href="logout.html">logout</a>
@@ -49,7 +51,6 @@
             <a href="impostazioni.html">impostazioni</a>
           </li>
         </ul>
-      </nav>
     </header>
     <main>
       <div class="stripes"></div>
@@ -140,24 +141,8 @@
       <p>Designed by Alessandro Bruno & Alessandra Di Bella</p>
     </footer>
   </body>
-  <script>
-    const img = document.querySelector('#user-logo');
-    const navBar = document.querySelector('#navigation-bar');
-
-    img.addEventListener('click', () => {
-      if (navBar.hasAttribute('visibile')) {
-        navBar.removeAttribute('visibile');
-      } else {
-        navBar.setAttribute('visibile', '');
-      }
-    });
-
-    document.addEventListener('click', (event) => {
-    // Controlla se il clic è avvenuto all'interno dell'immagine o della navbar
-    if (!event.target.closest('#user-logo') && !event.target.closest('#navigation-bar')) {
-      navBar.removeAttribute('visibile');
-    }
-  });
-
-  </script>
+  <script src="https://kit.fontawesome.com/457d18dfca.js" crossorigin="anonymous"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/other/visual-compiti.js"></script>
+  <script src="assets/js/other/user-navigation.js"></script>
 </html>

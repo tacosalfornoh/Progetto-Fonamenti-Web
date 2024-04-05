@@ -1,41 +1,37 @@
 <!DOCTYPE html>
 <html lang="it">
   <head>
-    <title>Compiti</title>
+    <title><?html echo getImpostazioni()['website_name']; ?></title>
+    <meta name="description" content="<?html echo getImpostazioni()['website_desc']; ?>">
+    <meta name="author" content="<?html echo getImpostazioni()['website_author']; ?>">
+    <meta name="keywords" content="<?html echo getImpostazioni()['website_keywords']; ?>" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
-    />
+    <script
+      src="https://kit.fontawesome.com/457d18dfca.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <header>
-      <nav>
+      <a href="#">
+        <img id="user-logo" style="width: 50px; height: 50px; border-radius: 50%;"
+          src="https://media.istockphoto.com/id/471927031/it/foto/testa-quadrata-uomo.jpg?s=1024x1024&w=is&k=20&c=P8kyX2JwfAiEOyYUzcE1IIe8Mr5PF_S4_Hp-2XWWiHY="
+          alt="logo"
+        />
+      </a>
+      <nav id="user-navigation">
         <ul>
           <li>
-            <a href="index.html">Home</a>
+            <a href="profilo.html">profilo</a>
           </li>
           <li>
-            <a href="compiti.html">Compiti</a>
+            <a href="logout.html">logout</a>
           </li>
           <li>
-            <a href="voti.html">Voti</a>
-          </li>
-          <li>
-            <a href="materiale.html">Materiale</a>
-          </li>
-          <li>
-            <a href="frequenze.html">Frequenze</a>
+            <a href="impostazioni.html">impostazioni</a>
           </li>
         </ul>
-        <a href="#">
-          <img
-            src="https://media.istockphoto.com/id/471927031/it/foto/testa-quadrata-uomo.jpg?s=1024x1024&w=is&k=20&c=P8kyX2JwfAiEOyYUzcE1IIe8Mr5PF_S4_Hp-2XWWiHY="
-            alt="logo"
-          />
-        </a>
-      </nav>
     </header>
     <main>
       <section id="giornate">

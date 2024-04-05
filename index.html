@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html lang="it">
   <head>
-    <title>Home</title>
+    <title><?html echo getImpostazioni()['website_name']; ?></title>
+    <meta name="description" content="<?html echo getImpostazioni()['website_desc']; ?>">
+    <meta name="author" content="<?html echo getImpostazioni()['website_author']; ?>">
+    <meta name="keywords" content="<?html echo getImpostazioni()['website_keywords']; ?>" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
     <script
@@ -11,35 +14,60 @@
   </head>
   <body>
     <header>
-      <nav>
-        <ul>
-          <li>
-            <a href="index.html">Home</a>
-          </li>
-          <li>
-            <a href="compiti.html">Compiti</a>
-          </li>
-          <li>
-            <a href="voti.html">Voti</a>
-          </li>
-          <li>
-            <a href="materiale.html">Materiale</a>
-          </li>
-          <li>
-            <a href="frequenze.html">Frequenze</a>
-          </li>
-        </ul>
+      <a href="#">
+        <i class="fas fa-bars"></i>
+        <img id="logo"
+          src="https://cdn.icon-icons.com/icons2/640/PNG/512/cloud-shape-sky-storage-internet-brand_icon-icons.com_59164.png"
+          alt="logo" />
+      </a>
         <a href="#">
-          <img
-            id="user-logo"
+          <img id="user-logo"
             src="https://media.istockphoto.com/id/471927031/it/foto/testa-quadrata-uomo.jpg?s=1024x1024&w=is&k=20&c=P8kyX2JwfAiEOyYUzcE1IIe8Mr5PF_S4_Hp-2XWWiHY="
             alt="logo"
           />
         </a>
-      </nav>
+      <nav id="user-navigation">
+        <ul>
+          <li>
+            <a href="profilo.html">profilo</a>
+          </li>
+          <li>
+            <a href="logout.html">logout</a>
+          </li>
+          <li>
+            <a href="impostazioni.html">impostazioni</a>
+          </li>
+        </ul>
     </header>
     <main>
       <div class="stripes"></div>
+      <section id="menu-navigation">
+      <nav>
+        <h2>Navigation</h2>
+        <ul>
+          <li>
+            <i class="fas fa-book"></i>
+            <a href="index.html">Home</a>
+          </li>
+          <li>
+            <i class="fas fa-book"></i>
+            <a href="compiti.html">Compiti</a>
+          </li>
+          <li>
+            <i class="fas fa-book"></i>
+            <a href="voti.html">Voti</a>
+          </li>
+          <li>
+            <i class="fas fa-book"></i>
+            <a href="materiale.html">Materiale</a>
+          </li>
+          <li>
+            <i class="fas fa-book"></i>
+            <a href="frequenze.html">Frequenze</a>
+          </li>
+        </ul>
+      </nav>
+      </section>
       <section id="home">
         <section id="sommario">
           <article id="frequenza" class="box">
@@ -62,22 +90,6 @@
         <section id="prestazioni">
           <article class="box">
             <p>
-              lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
-              quod.
-              lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
-              quod.
-              lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
-              quod.
-              lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
-              quod.
-              lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
-              quod.
-              lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
-              quod.
-              lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
-              quod.
-              lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
-              quod.
               lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
               quod.
               lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
@@ -120,4 +132,9 @@
       <p>Designed by Alessandro Bruno & Alessandra Di Bella</p>
     </footer>
   </body>
+  <script src="https://kit.fontawesome.com/457d18dfca.js" crossorigin="anonymous"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/other/visual-compiti.js"></script>
+  <script src="assets/js/other/user-navigation.js"></script>
+  <script src="assets/js/other/menu-navigation.js"></script>
 </html>

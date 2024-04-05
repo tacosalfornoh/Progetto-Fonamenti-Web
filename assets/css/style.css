@@ -6,135 +6,185 @@
 @import url(other/compiti.css);
 
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    transition: all 0.3s ease-in-out;
-    -webkit-transition: 0.3s all ease-in-out;
-    -moz-transition: 0.3s all ease-in-out;
-    -ms-transition: 0.3s all ease-in-out;
-    -o-transition: 0.3s all ease-in-out;
-    color: var(--dark-color);
-    font-family: "Lexend", sans-serif;
-    font-optical-sizing: auto;
-    font-style: normal;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: 0.3s all ease-in-out;
+  -moz-transition: 0.3s all ease-in-out;
+  -ms-transition: 0.3s all ease-in-out;
+  -o-transition: 0.3s all ease-in-out;
+  color: var(--dark-color);
+  font-family: "Lexend", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
 }
 
 /* * start Header */
 header {
-    z-index: 1000;
-    position: fixed;
-    background-color: var(--white-color);
-    width: 100%;
-    padding: 1vh 2vw;
-    top: 0;
-    box-shadow: 0 2px 4px #00000020;
+  z-index: 1000;
+  position: fixed;
+  width: 100%;
+  padding: 1vh 2vw;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
-
+header > a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  gap: 10px;
+}
+header > a > i {
+  font-size: 1.5rem;
+}
+header a > img#logo {
+  width: 15%;
+}
+header img#user-logo {
+  width: 50px;
+  height: 50px;
+  border: 3px solid transparent;
+  border-radius: 50%;
+}
+header img#user-logo:hover {
+  cursor: pointer;
+  border: 3px solid var(--primary-color);
+}
 /* * start Navigation Bar */
 #menu-navigation {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    justify-content: space-between;
-    align-items: center;
+  background-color: #EAF1FB;
+  padding: 8vh 1vw;
+  height: 100vh;
+  font-size: 1.1rem;
+  min-width: max-content;
 }
-#menu-navigation > a {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
+#menu-navigation > nav > h2 {
+    font-weight: 600;
+    padding: 5px 10px;
 }
-#menu-navigation > ul > li {
-    display: inline;
+#menu-navigation > nav > a {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
-#menu-navigation > ul > li > a {
-    text-decoration: none;
-    font-size: 1rem;
-    font-weight: 400;
-    margin: 0 0.3vw;
+#menu-navigation > nav > ul {
+    list-style: none;
 }
-#menu-navigation > ul > li a:hover {
-    color: var(--primary-color);
-    border-bottom: 1px solid var(--primary-color);
-}
-#menu-navigation > a > img {
-    width: 40px;
-    height: 40px;
-    border: 3px solid transparent;
-    border-radius: 50%;
-}
-#menu-navigation > a > img:hover {
+#menu-navigation > nav > ul > li {
+    padding: 5px 10px;
+    border-radius: 20px;
     cursor: pointer;
-    border: 3px solid var(--primary-color);
+    display: block;
+    align-items: center;
+}
+#menu-navigation > nav > ul > li:hover {
+  color: var(--primary-color);
+  background-color: var(--light-primary-color);
+}
+#menu-navigation > nav > ul > li > i {
+  margin-right: 5px;
+}
+#menu-navigation > nav > ul > li > a {
+  text-decoration: none;
+  font-weight: 400;
+  color: #041E49;
 }
 /* ? end Navigation Bar */
+/* * start User Navigation */
+#user-navigation {
+  display: none; /* Nascondi la navbar inizialmente */
+  width: max-content;
+  background-color: var(--white-color);
+  border-radius: 0 0 20px 20px;
+  padding: 10px;
+  right: 30px;
+  box-shadow: 0 8px 10px #00000020;
+}
+
+#user-navigation[visibile] {
+  display: block; /* Mostra la navbar quando ha l'attributo "visibile" */
+  position: absolute;
+}
+
+#user-navigation > ul > li {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+/* ? end User Navigation */
 /* ? end Header */
 
 /* * start Main Body */
 /* sfondo dietro il Main Body */
 .stripes {
-    width: 100%;
-    height: 96%;
-    bottom: 0;
-    left: 0;
-    z-index: -1;
-    position: absolute;
-    -webkit-transform: skewY(-15deg);
-    transform: skewY(-15deg);
-    -webkit-transform-origin: 0 0;
-    transform-origin: 0px 0;
-    background: var(--stripes);
-    box-shadow: 0 3px 20px 5px rgba(37, 44, 97, 0.1);
+  width: 100%;
+  height: 96%;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  position: absolute;
+  -webkit-transform: skewY(-15deg);
+  transform: skewY(-15deg);
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0px 0;
+  background: var(--stripes);
+  box-shadow: 0 3px 20px 5px rgba(37, 44, 97, 0.1);
 }
 
 body {
-    background-color: var(--white-color);
-    min-height: 100vh;
+  background-color: var(--white-color);
+  min-height: 100vh;
 }
 
 main {
-    padding: 100px 10vw;
+  padding: 0 2vw 0 0;
+  display: flex;
+  gap: 20px;
 }
 /* ? end Main Body */
 
 /* * start Footer */
 footer {
-    background-color: var(--white-color);
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    padding: 2vh 2vw;
+  background-color: var(--white-color);
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 2vh 2vw;
 }
 footer > p {
-    font-size: 0.9rem;
-    color: var(--dark-color);
+  font-size: 0.9rem;
+  color: var(--dark-color);
 }
 /* ? end Footer */
 
 /* * start Utility Classes */
 /* * start Box Classes */
 .box {
-    background-color: var(--white-color);
-    box-shadow: var(--box-shadow);
-    border-radius: 20px;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
+  background-color: var(--white-color);
+  box-shadow: var(--box-shadow);
+  border-radius: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
 }
 
 .box .box-header {
-    font-size: large;
-    font-weight: 500;
+  font-size: large;
+  font-weight: 500;
 }
 
 .box .box-main {
-    font-size: medium;
-    font-weight: 300;
-    margin: 10px 0;
+  font-size: medium;
+  font-weight: 300;
+  margin: 10px 0;
 }
 
 .box .box-footer {
-    font-size: small;
-    font-weight: 300;
+  font-size: small;
+  font-weight: 300;
 }
 /* ? end box Boxes */
 /* ? end Utility Classes */

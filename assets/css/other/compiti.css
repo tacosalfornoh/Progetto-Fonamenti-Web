@@ -12,11 +12,10 @@ section#giornate section#compiti {
 }
 
 section#compiti article {
-    height: 25%;
+    max-height: max-content;
+    cursor: pointer;
 }
 
 section#compiti article:hover {
-    cursor: pointer;
     background-color: var(--stripes);
-    height: fit-content;
 }

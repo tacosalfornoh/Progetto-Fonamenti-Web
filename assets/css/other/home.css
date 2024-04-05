@@ -5,6 +5,7 @@ section#home {
     "sommario lezioni"
     "prestazioni lezioni";
     grid-template-columns: 2fr 1fr;
+    padding: 100px 0 0 0;
 }
 
 section#home section#prestazioni {
@@ -54,5 +55,13 @@ section#sommario .box#compiti i {
 
 aside#lezioni .box {
     height: max-content;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
+    border-radius: 0;
+}
+
+aside#lezioni .box:first-of-type {
+    border-radius: 20px 20px 0 0;
+}
+aside#lezioni .box:last-of-type {
+    border-radius: 0 0 20px 20px;
 }
