@@ -21,19 +21,16 @@ for (const articolo of articoli) {
   articolo.addEventListener("click", () => {
     const paragrafo = articolo.querySelector("#descrizione"); // Trova il id di quel paragrafo giusto
 
-    if (
-      paragrafo.textContent ===
-      descrizioniTagliate[descrizioniTagliate.indexOf(paragrafo.textContent)]
-    ) {
+    if (paragrafo.textContent === descrizioniTagliate[descrizioniTagliate.indexOf(paragrafo.textContent)]) {
       indiceParagrafo = descrizioniTagliate.indexOf(paragrafo.textContent);
       paragrafo.textContent = descrizioniOriginali[indiceParagrafo];
-      articolo.setAttribute("tagliato");
+      articolo.setAttribute("completo");
     } else {
       const indiceParagrafo = descrizioniOriginali.indexOf(
         paragrafo.textContent
       );
       paragrafo.textContent = descrizioniTagliate[indiceParagrafo];
-      articolo.removeAttribute("tagliato");
+      articolo.removeAttribute("completo");
     }
   });
 }
