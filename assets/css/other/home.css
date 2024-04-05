@@ -1,67 +1,70 @@
-section#home {
-    grid-gap: 20px;
+#home {
     display: grid;
     grid-template-areas: 
-    "sommario lezioni"
-    "prestazioni lezioni";
+        "sommario lezioni"
+        "prestazioni lezioni";
     grid-template-columns: 2fr 1fr;
+    grid-gap: 20px;
     padding: 100px 0 0 0;
 }
 
-section#home section#prestazioni {
+#prestazioni {
     grid-area: prestazioni;
 }
 
-section#home aside#lezioni {
+#lezioni {
     grid-area: lezioni;
 }
 
-section#home section#sommario {
+#sommario {
     grid-area: sommario;
     display: flex;
-    flex-direction: row;
     gap: 20px;
 }
-section#sommario .box {
+
+#sommario .box {
     height: fit-content;
     min-height: max-content;
-}
-section#sommario .box#frequenza  {
-    background-color: var(--light-primary-color);
     flex-grow: 1;
 }
-section#sommario .box#frequenza i {
+
+#sommario #frequenza {
+    background-color: var(--light-primary-color);
+}
+
+#sommario #frequenza i {
     font-size: 3rem;
     color: var(--primary-color);
 }
 
-section#sommario .box#andamento  {
-    background-color: var(--light-success-color);;
-    flex-grow: 1;
+#sommario #andamento {
+    background-color: var(--light-success-color);
 }
-section#sommario .box#andamento i {
+
+#sommario #andamento i {
     font-size: 3rem;
     color: var(--success-color);
 }
 
-section#sommario .box#compiti  {
-    background-color: var(--light-danger-color);;
-    flex-grow: 1;
+#sommario #compiti {
+    background-color: var(--light-danger-color);
 }
-section#sommario .box#compiti i {
+
+#sommario #compiti i {
     font-size: 3rem;
     color: var(--danger-color);
 }
 
-aside#lezioni .box {
+#lezioni .box {
     height: max-content;
     margin-bottom: 5px;
     border-radius: 0;
 }
 
-aside#lezioni .box:first-of-type {
+#lezioni .box:first-of-type {
     border-radius: 20px 20px 0 0;
 }
-aside#lezioni .box:last-of-type {
+
+#lezioni .box:last-of-type {
     border-radius: 0 0 20px 20px;
 }
