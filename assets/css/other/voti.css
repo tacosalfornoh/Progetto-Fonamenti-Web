@@ -22,18 +22,18 @@ section#box-voti>article>p{
     
 }
 
-p.materia{
+section#voti p.materia{
     font-size: 1.5rem;
     font-weight: bold;
 }
 
-p.voto{
+section#voti p.voto{
     font-size: 2rem;
     font-weight: 300;
 }
 
 
-aside>article {
+section#voti aside>article {
     display: grid;
     grid-template-columns: 1fr 10fr;
     align-items: center;
@@ -44,12 +44,21 @@ aside>article {
     margin: 5px;
 }
 
-.descrizione{
+section#voti .descrizione{
     margin-top: 7px;
 }
 
-.mark{
+section#voti .mark{
     text-align: center;
     font-size: 25px;
     font-weight: 600;
 }
+
+#navigation-bar {
+    display: none;  /* Nascondi la navbar inizialmente */
+  }
+  
+  #navigation-bar[visibile] {
+    display: block;  /* Mostra la navbar quando ha l'attributo "visibile" */
+  }
+  

@@ -21,6 +21,10 @@ section#home section#sommario {
     flex-direction: row;
     gap: 20px;
 }
+section#sommario .box {
+    height: fit-content;
+    min-height: max-content;
+}
 section#sommario .box#frequenza  {
     background-color: var(--light-primary-color);
     flex-grow: 1;
@@ -46,4 +50,9 @@ section#sommario .box#compiti  {
 section#sommario .box#compiti i {
     font-size: 3rem;
     color: var(--danger-color);
+}
+
+aside#lezioni .box {
+    height: max-content;
+    margin-bottom: 20px;
 }

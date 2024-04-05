@@ -8,10 +8,6 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
     />
-    <script
-      src="https://kit.fontawesome.com/457d18dfca.js"
-      crossorigin="anonymous"
-    ></script>
   </head>
   <body>
     <header>
@@ -35,7 +31,6 @@
         </ul>
         <a href="#">
           <img
-            class="nav-user-logo"
             src="https://media.istockphoto.com/id/471927031/it/foto/testa-quadrata-uomo.jpg?s=1024x1024&w=is&k=20&c=P8kyX2JwfAiEOyYUzcE1IIe8Mr5PF_S4_Hp-2XWWiHY="
             alt="logo"
           />
@@ -192,41 +187,7 @@
       <p>Designed by Alessandro Bruno & Alessandra Di Bella</p>
     </footer>
   </body>
-  <script>
-    const descrizioni = document.querySelectorAll("#descrizione");
-    const articoli = document.querySelectorAll("article");
-    const descrizioniTagliate = [];
-    const descrizioniOriginali = [];
-    var newDescrizione;
-
-    for (const paragrafo of descrizioni) {
-      descrizioniOriginali.push(paragrafo.textContent);
-    }
-
-    for (const paragrafo of descrizioni) {
-      const newDescrizione = paragrafo.textContent.slice(0, 80).concat("...");
-      paragrafo.textContent = newDescrizione;
-    }
-
-    for (const paragrafo of descrizioni) {
-      descrizioniTagliate.push(paragrafo.textContent);
-    }
-
-    // Aggiungi event listener agli articoli
-for (const article of articoli) {
-  article.addEventListener("mouseenter", () => {
-    const paragrafo = article.querySelector("#descrizione"); // Trova il id di quel paragrafo giusto
-    indiceParagrafo = descrizioniTagliate.indexOf(paragrafo.textContent);
-    paragrafo.textContent = descrizioniOriginali[indiceParagrafo];
-  });
-
-  article.addEventListener("mouseleave", () => {
-    const paragrafo = article.querySelector("#descrizione");
-    indiceParagrafo = descrizioniOriginali.indexOf(paragrafo.textContent);
-    console.log(indiceParagrafo + " controllo indice paragrafo 1");
-    paragrafo.textContent = descrizioniTagliate[indiceParagrafo];
-    console.log("esce mouse");
-  });
-}
-  </script>
+  <script src="https://kit.fontawesome.com/457d18dfca.js" crossorigin="anonymous"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/other/visual-compiti.js"></script>
 </html>
