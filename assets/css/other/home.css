@@ -1,0 +1,49 @@
+section#home {
+    grid-gap: 20px;
+    display: grid;
+    grid-template-areas: 
+    "sommario lezioni"
+    "prestazioni lezioni";
+    grid-template-columns: 2fr 1fr;
+}
+
+section#home section#prestazioni {
+    grid-area: prestazioni;
+}
+
+section#home aside#lezioni {
+    grid-area: lezioni;
+}
+
+section#home section#sommario {
+    grid-area: sommario;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+section#sommario .box#frequenza  {
+    background-color: var(--light-primary-color);
+    flex-grow: 1;
+}
+section#sommario .box#frequenza i {
+    font-size: 3rem;
+    color: var(--primary-color);
+}
+
+section#sommario .box#andamento  {
+    background-color: var(--light-success-color);;
+    flex-grow: 1;
+}
+section#sommario .box#andamento i {
+    font-size: 3rem;
+    color: var(--success-color);
+}
+
+section#sommario .box#compiti  {
+    background-color: var(--light-danger-color);;
+    flex-grow: 1;
+}
+section#sommario .box#compiti i {
+    font-size: 3rem;
+    color: var(--danger-color);
+}

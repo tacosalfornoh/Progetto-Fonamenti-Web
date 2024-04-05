@@ -1,0 +1,55 @@
+section#voti{
+    display: flex;
+    flex-direction: row;
+    gap: 80px;
+}
+
+section#box-voti article.box {
+    margin-bottom: 25px;
+}
+
+section#box-voti {
+    flex-grow: 1;
+}
+section#voti aside {
+    flex-grow: 100;
+}
+
+section#box-voti>article>p{
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+    
+}
+
+p.materia{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+p.voto{
+    font-size: 2rem;
+    font-weight: 300;
+}
+
+
+aside>article {
+    display: grid;
+    grid-template-columns: 1fr 10fr;
+    align-items: center;
+    gap: 20px;
+    padding: 10px;
+    background-color: var(--stripes);
+    border-radius: 20px;
+    margin: 5px;
+}
+
+.descrizione{
+    margin-top: 7px;
+}
+
+.mark{
+    text-align: center;
+    font-size: 25px;
+    font-weight: 600;
+}

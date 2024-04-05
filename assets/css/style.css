@@ -1,0 +1,141 @@
+@import url(fonts.css);
+@import url(config.css);
+@import url(other/home.css);
+@import url(other/voti.css);
+@import url(other/login.css);
+@import url(other/compiti.css);
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: 0.3s all ease-in-out;
+    -moz-transition: 0.3s all ease-in-out;
+    -ms-transition: 0.3s all ease-in-out;
+    -o-transition: 0.3s all ease-in-out;
+    color: var(--dark-color);
+    font-family: "Lexend", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+/* * start Header */
+header {
+    z-index: 1000;
+    position: fixed;
+    background-color: var(--white-color);
+    width: 100%;
+    padding: 1vh 2vw;
+    top: 0;
+    box-shadow: 0 2px 4px #00000020;
+}
+
+/* * start Navigation Bar */
+header > nav {
+    display: grid;
+    margin: 0 8vw;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
+    align-items: center;
+}
+header > nav > a {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+header > nav > ul > li {
+    display: inline;
+}
+header > nav > ul > li > a {
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 400;
+    margin: 0 0.3vw;
+}
+nav > ul > li a:hover {
+    color: var(--primary-color);
+    border-bottom: 1px solid var(--primary-color);
+}
+.nav-user-logo {
+    width: 40px;
+    height: 40px;
+    border: 3px solid transparent;
+    border-radius: 50%;
+}
+.nav-user-logo:hover {
+    cursor: pointer;
+    border: 3px solid var(--primary-color);
+}
+/* ? end Navigation Bar */
+/* ? end Header */
+
+/* * start Main Body */
+/* sfondo dietro il Main Body */
+.stripes {
+    width: 100%;
+    height: 96%;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    position: absolute;
+    -webkit-transform: skewY(-15deg);
+    transform: skewY(-15deg);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0px 0;
+    background: var(--stripes);
+    box-shadow: 0 3px 20px 5px rgba(37, 44, 97, 0.1);
+}
+
+body {
+    background-color: var(--white-color);
+    min-height: 100vh;
+}
+
+main {
+    padding: 100px 10vw;
+}
+/* ? end Main Body */
+
+/* * start Footer */
+footer {
+    background-color: var(--white-color);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 2vh 2vw;
+}
+footer > p {
+    font-size: 0.9rem;
+    color: var(--dark-color);
+}
+/* ? end Footer */
+
+/* * start Utility Classes */
+/* * start Box Classes */
+.box {
+    background-color: var(--white-color);
+    box-shadow: var(--box-shadow);
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.box .box-header {
+    font-size: large;
+    font-weight: 500;
+}
+
+.box .box-main {
+    font-size: medium;
+    font-weight: 300;
+    margin: 10px 0;
+}
+
+.box .box-footer {
+    font-size: small;
+    font-weight: 300;
+}
+/* ? end box Boxes */
+/* ? end Utility Classes */

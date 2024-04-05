@@ -1,0 +1,22 @@
+section#giornate{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+section#giornate section#compiti {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px 0;
+}
+
+section#compiti article {
+    height: 25%;
+}
+
+section#compiti article:hover {
+    cursor: pointer;
+    background-color: var(--stripes);
+    height: fit-content;
+}
