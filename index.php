@@ -1,5 +1,5 @@
 
-
+<?php echo "Benvenuto su Progetto-Fonamenti-Web"; ?>
 <html>
     <head>
 
