@@ -79,8 +79,4 @@
         </aside>
     </section>
 </main>
-<footer>
-    <p>Designed by Alessandro Bruno & Alessandra Di Bella</p>
-</footer>
-</body>
-</html>
+<?php include 'include/footer.php'; ?>

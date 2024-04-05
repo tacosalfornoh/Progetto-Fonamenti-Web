@@ -1,14 +1,13 @@
 <?php 
 require_once("config.php");
-
 ?>
 <!DOCTYPE html>
 <html lang="it">
   <head>
-    <title>?php echo getSettings()['website_name']; ?></title>
-    <meta name="description" content="?php echo getSettings()['website_desc']; ?>">
-    <meta name="author" content="?php echo getSettings()['website_author']; ?>">
-    <meta name="keywords" content="?php echo getSettings()['website_keywords']; ?>" />
+    <title><?php echo getImpostazioni()['website_name']; ?></title>
+    <meta name="description" content="<?php echo getImpostazioni()['website_desc']; ?>">
+    <meta name="author" content="<?php echo getImpostazioni()['website_author']; ?>">
+    <meta name="keywords" content="<?php echo getImpostazioni()['website_keywords']; ?>" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
     <script
@@ -18,7 +17,7 @@ require_once("config.php");
   </head>
   <body>
     <header>
-      <nav>
+      <nav id="menu-navigation">
         <ul>
           <li>
             <a href="index.php">Home</a>
@@ -43,7 +42,7 @@ require_once("config.php");
           />
         </a>
       </nav>
-      <nav class="box" id="navigation-bar">
+      <nav id="user-navigation">
         <ul>
           <li>
             <a href="profilo.html">profilo</a>

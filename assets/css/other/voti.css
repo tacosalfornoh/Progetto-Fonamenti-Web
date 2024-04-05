@@ -54,23 +54,26 @@ section#voti .mark{
     font-weight: 600;
 }
 
-#navigation-bar {
+
+/* ! DA SPOSTARE IN STYLE.CSS */
+#user-navigation {
     display: none;  /* Nascondi la navbar inizialmente */
-  }
-  
-#navigation-bar[visibile] {
-    display: block;  /* Mostra la navbar quando ha l'attributo "visibile" */
+    width: max-content;
+    background-color: var(--white-color);
+    border-radius: 0 0 20px 20px;
+    padding: 10px;
+    right: 30px;
+    box-shadow: 0 8px 10px #00000020;
 }
   
-body>header>nav.box{
-    width: max-content;
-    float: right;
-    margin-top: 5px;
-    border-style: groove;
-  }
+#user-navigation[visibile] {
+    display: block;  /* Mostra la navbar quando ha l'attributo "visibile" */
+    position: absolute;
+}
 
-body>header>nav.box>ul>li{
+#user-navigation>ul>li{
 display: flex;
 flex-direction: column;
 gap: 10px;
 }
+/* ! DA SPOSTARE IN STYLE.CSS */

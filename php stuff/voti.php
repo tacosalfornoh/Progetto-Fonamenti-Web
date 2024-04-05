@@ -84,31 +84,4 @@
         </aside>
       </section>
     </main>
-    <footer>
-      <p>Designed by Alessandro Bruno & Alessandra Di Bella</p>
-    </footer>
-  </body>
-  <script>
-    const img = document.querySelector('#user-logo');
-    const navBar = document.querySelector('#navigation-bar');
-
-    img.addEventListener('click', () => {
-      if (navBar.hasAttribute('visibile')) {
-        navBar.removeAttribute('visibile');
-      } else {
-        navBar.setAttribute('visibile', '');
-      }
-    });
-
-    document.addEventListener('click', (event) => {
-    // Controlla se il clic è avvenuto all'interno dell'immagine o della navbar
-    if (!event.target.closest('#user-logo') && !event.target.closest('#navigation-bar')) {
-      navBar.removeAttribute('visibile');
-    }
-  });
-
-  </script>
-</html>
-
-
-navBar.removeAttribute('visibile');
+    <?php include 'include/footer.php'; ?>

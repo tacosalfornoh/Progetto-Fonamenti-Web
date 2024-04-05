@@ -1,7 +1,3 @@
-body {
-    background-color: white;
-}
-
 section#login {
     display: flex;
     justify-content: center;
@@ -10,7 +6,7 @@ section#login {
     min-height: 100vh;
 }
 
-section#login .card {
+section#login .box {
     width: 60%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -19,7 +15,7 @@ section#login .card {
     align-items: center;
 }
 
-section#login .card-footer {
+section#login .box-footer {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -29,13 +25,13 @@ section#login .card-footer {
 }
 
 
-section#login .card img {
+section#login .box img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-section#login .card form {
+section#login .box form {
     display: grid;
     grid-template-columns: 1fr;
     justify-items: flex-start;
@@ -44,23 +40,23 @@ section#login .card form {
     width: 80%;
 }
 
-section#login .card form p {
+section#login .box form p {
     font-size: 1.25rem;
     font-weight: 500;
     margin: 10px 0;
 }
 
-section#login .card form input {
+section#login .box form input {
     width: 100%;
     border: none;
     padding: 10px;
     border-radius: 10px;
 }
-section#login .card form input:focus{
+section#login .box form input:focus{
     background-color: red;
 }
 
-section#login .card form button {
+section#login .box form button {
     width: 100%;
     padding: 5px;
     margin-top: 20px;
@@ -72,6 +68,6 @@ section#login .card form button {
     font-weight: 500;
     cursor: pointer;
 }
-section#login .card form button:hover {
+section#login .box form button:hover {
     background-color: var(--dark-primary-color);
 }

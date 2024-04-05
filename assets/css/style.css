@@ -32,38 +32,37 @@ header {
 }
 
 /* * start Navigation Bar */
-header > nav {
+#menu-navigation {
     display: grid;
-    margin: 0 8vw;
     grid-template-columns: 1fr 1fr;
     justify-content: space-between;
     align-items: center;
 }
-header > nav > a {
+#menu-navigation > a {
     display: flex;
     justify-content: flex-end;
     align-items: center;
 }
-header > nav > ul > li {
+#menu-navigation > ul > li {
     display: inline;
 }
-header > nav > ul > li > a {
+#menu-navigation > ul > li > a {
     text-decoration: none;
     font-size: 1rem;
     font-weight: 400;
     margin: 0 0.3vw;
 }
-nav > ul > li a:hover {
+#menu-navigation > ul > li a:hover {
     color: var(--primary-color);
     border-bottom: 1px solid var(--primary-color);
 }
-nav > a > img {
+#menu-navigation > a > img {
     width: 40px;
     height: 40px;
     border: 3px solid transparent;
     border-radius: 50%;
 }
-nav > a > img:hover {
+#menu-navigation > a > img:hover {
     cursor: pointer;
     border: 3px solid var(--primary-color);
 }
