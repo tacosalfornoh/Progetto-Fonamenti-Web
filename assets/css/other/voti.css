@@ -58,7 +58,19 @@ section#voti .mark{
     display: none;  /* Nascondi la navbar inizialmente */
   }
   
-  #navigation-bar[visibile] {
+#navigation-bar[visibile] {
     display: block;  /* Mostra la navbar quando ha l'attributo "visibile" */
-  }
+}
   
+body>header>nav.box{
+    width: max-content;
+    float: right;
+    margin-top: 5px;
+    border-style: groove;
+  }
+
+body>header>nav.box>ul>li{
+display: flex;
+flex-direction: column;
+gap: 10px;
+}
