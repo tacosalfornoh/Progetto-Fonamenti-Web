@@ -1,0 +1,211 @@
+/* Importing external CSS files */
+@import url(fonts.css); /* importing fonts.css */
+@import url(config.css); /* importing config.css */
+@import url(other/home.css); /* importing home.css from the other directory */
+@import url(other/voti.css); /* importing voti.css from the other directory */
+@import url(other/login.css); /* importing login.css from the other directory */
+@import url(other/compiti.css); /* importing compiti.css from the other directory */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  transition: all 0.3s ease-in-out;
+  color: var(--dark-color);
+  font-family: "Lexend", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+header {
+  z-index: 1000;
+  position: fixed;
+  width: 100%;
+  padding: 1vh 2vw;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  > a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    gap: 10px;
+    > i {
+      font-size: 1.5rem;
+    }
+  }
+  img#logo {
+    width: 15%;
+  }
+  img#user-logo {
+    width: 50px;
+    height: 50px;
+    border: 3px solid transparent;
+    border-radius: 50%;
+    &:hover {
+      cursor: pointer;
+      border: 3px solid var(--primary-color);
+    }
+  }
+}
+
+#menu-navigation {
+  background-color: #EAF1FB;
+  padding: 8vh 1vw;
+  height: 100vh;
+  font-size: 1.1rem;
+  min-width: max-content;
+  >nav {
+    >h2 {
+      font-weight: 600;
+      padding: 5px 10px;
+    }
+    >a {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+    >ul {
+      list-style: none;
+      >li {
+        padding: 5px 10px;
+        border-radius: 20px;
+        cursor: pointer;
+        display: block;
+        align-items: center;
+        &:hover {
+          background-color: var(--primary-color);
+          color: var(--white-color);
+        }
+        >i {
+          margin-right: 5px;
+        }
+        >a {
+          text-decoration: none;
+          font-weight: 400;
+          color: var(--dark-color);
+        }
+      }
+    }
+  }
+}
+
+#user-navigation {
+  display: none;
+  width: max-content;
+  background-color: var(--white-color);
+  border-radius: 0 0 20px 20px;
+  padding: 10px;
+  left: 30px;
+  top: 10px;
+  box-shadow: 0 8px 10px #00000020;
+  &[visible] {
+    display: block;
+    position: absolute;
+  }
+  >nav {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    ul {
+      list-style: none;
+      li {
+        padding: 5px 10px;
+        border-radius: 20px;
+        cursor: pointer;
+        display: block;
+        align-items: center;
+        }
+        &:hover {
+          background-color: var(--primary-color);
+          color: var(--white-color);
+        }
+        i {
+          margin-right: 5px;
+        }
+        a {
+          text-decoration: none;
+          font-weight: 400;
+          color: var(--dark-color);
+        }
+      }
+    }
+    h2 {
+      font-weight: 500;
+      padding: 5px 10px;
+    }
+    a {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      &:hover {
+        color: var(--primary-color);
+      }
+    }
+  }
+
+footer {
+  background-color: var(--white-color);
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 2vh 2vw;
+  p {
+    font-size: 0.9rem;
+    color: var(--dark-color);
+  }
+}
+
+.stripes {
+  width: 100%;
+  height: 96%;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  position: absolute;
+  transform: skewY(-15deg);
+  transform-origin: 0px 0;
+  background: var(--stripes);
+  box-shadow: 0 3px 20px 5px rgba(37, 44, 97, 0.1);
+}
+
+body {
+  background-color: var(--light-color);
+  min-height: 100vh;
+}
+
+main {
+  padding: 0 2vw 0 0;
+  display: flex;
+  gap: 20px;
+}
+
+.box {
+  background-color: var(--white-color);
+  box-shadow: var(--box-shadow);
+  border-radius: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  .box-header {
+    font-size: large;
+    font-weight: 500;
+  }
+  .box-main {
+    font-size: medium;
+    font-weight: 300;
+  }
+}
+
+nav>section#user-nav-header{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid var(--dark-color);
+  >h3 {
+    font-weight: 500;
+  }
+  
+}

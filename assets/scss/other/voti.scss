@@ -1,0 +1,49 @@
+$background-color_1: var(--stripes);
+
+#voti {
+	display: flex;
+	flex-direction: row;
+	gap: 80px;
+	aside {
+		flex-grow: 100;
+		>article {
+			display: grid;
+			grid-template-columns: 1fr 10fr;
+			align-items: center;
+			gap: 20px;
+			padding: 10px;
+			background-color: $background-color_1;
+			border-radius: 20px;
+			margin: 5px;
+		}
+	}
+	p.materia {
+		font-size: 1.5rem;
+		font-weight: bold;
+	}
+	p.voto {
+		font-size: 2rem;
+		font-weight: 300;
+	}
+	.descrizione {
+		margin-top: 7px;
+	}
+	.mark {
+		text-align: center;
+		font-size: 25px;
+		font-weight: 600;
+	}
+}
+#box-voti {
+	article.box {
+		margin-bottom: 25px;
+	}
+	flex-grow: 1;
+	>article {
+		>p {
+			display: flex;
+			justify-content: center;
+			padding: 5px;
+		}
+	}
+}

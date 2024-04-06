@@ -8,6 +8,37 @@
     padding: 100px 0 0 0;
 }
 
+
+#sommario {
+    grid-area: sommario;
+    display: flex;
+    gap: 20px;
+}
+#sommario .box {
+    height: fit-content;
+    min-height: max-content;
+    flex-grow: 1;
+    background-color: var(--light-success-color);
+}
+#sommario .box i {
+    font-size: 3rem;
+    color: var(--success-color);
+}
+#sommario .box:first-of-type {
+    background-color: var(--light-primary-color);
+}
+#sommario .box:first-of-type i {
+    font-size: 3rem;
+    color: var(--primary-color);
+}
+#sommario .box:last-of-type {
+    background-color: var(--light-danger-color);
+}
+#sommario .box:last-of-type i {
+    font-size: 3rem;
+    color: var(--danger-color);
+}
+
 #prestazioni {
     grid-area: prestazioni;
 }
@@ -15,56 +46,14 @@
 #lezioni {
     grid-area: lezioni;
 }
-
-#sommario {
-    grid-area: sommario;
-    display: flex;
-    gap: 20px;
-}
-
-#sommario .box {
-    height: fit-content;
-    min-height: max-content;
-    flex-grow: 1;
-}
-
-#sommario #frequenza {
-    background-color: var(--light-primary-color);
-}
-
-#sommario #frequenza i {
-    font-size: 3rem;
-    color: var(--primary-color);
-}
-
-#sommario #andamento {
-    background-color: var(--light-success-color);
-}
-
-#sommario #andamento i {
-    font-size: 3rem;
-    color: var(--success-color);
-}
-
-#sommario #compiti {
-    background-color: var(--light-danger-color);
-}
-
-#sommario #compiti i {
-    font-size: 3rem;
-    color: var(--danger-color);
-}
-
 #lezioni .box {
     height: max-content;
     margin-bottom: 5px;
     border-radius: 0;
 }
-
 #lezioni .box:first-of-type {
     border-radius: 20px 20px 0 0;
 }
-
 #lezioni .box:last-of-type {
-    border-radius: 0 0 20px 20px;
+    border-radius: 0 0 20px 20px; 
 }

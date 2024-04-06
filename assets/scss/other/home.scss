@@ -1,0 +1,60 @@
+$color_1: var(--success-color);
+$color_2: var(--primary-color);
+$color_3: var(--danger-color);
+$background-color_1: var(--light-success-color);
+$background-color_2: var(--light-primary-color);
+$background-color_3: var(--light-danger-color);
+
+#home {
+	display: grid;
+	grid-template-areas: "sommario lezioni" "prestazioni lezioni";
+	grid-template-columns: 2fr 1fr;
+	grid-gap: 20px;
+	padding: 100px 0 0 0;
+}
+#sommario {
+	grid-area: sommario;
+	display: flex;
+	gap: 20px;
+	.box {
+		height: fit-content;
+		min-height: max-content;
+		flex-grow: 1;
+		background-color: $background-color_1;
+		i {
+			font-size: 3rem;
+			color: $color_1;
+		}
+		&:first-of-type {
+			background-color: $background-color_2;
+			i {
+				font-size: 3rem;
+				color: $color_2;
+			}
+		}
+		&:last-of-type {
+			background-color: $background-color_3;
+			i {
+				font-size: 3rem;
+				color: $color_3;
+			}
+		}
+	}
+}
+#prestazioni {
+	grid-area: prestazioni;
+}
+#lezioni {
+	grid-area: lezioni;
+	.box {
+		height: max-content;
+		margin-bottom: 5px;
+		border-radius: 0;
+		&:first-of-type {
+			border-radius: 20px 20px 0 0;
+		}
+		&:last-of-type {
+			border-radius: 0 0 20px 20px;
+		}
+	}
+}

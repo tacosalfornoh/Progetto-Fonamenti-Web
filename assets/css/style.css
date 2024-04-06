@@ -1,10 +1,10 @@
-@import url(fonts.css);
-@import url(config.css);
-@import url(other/home.css);
-@import url(other/voti.css);
-@import url(other/login.css);
-@import url(other/compiti.css);
-
+/* Importing external CSS files */
+@import url(fonts.css); /* importing fonts.css */
+@import url(config.css); /* importing config.css */
+@import url(other/home.css); /* importing home.css from the other directory */
+@import url(other/voti.css); /* importing voti.css from the other directory */
+@import url(other/login.css); /* importing login.css from the other directory */
+@import url(other/compiti.css); /* importing compiti.css from the other directory */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -26,29 +26,24 @@ header {
   align-items: center;
   justify-content: space-between;
 }
-
 header > a {
   display: flex;
   align-items: center;
   text-decoration: none;
   gap: 10px;
 }
-
 header > a > i {
   font-size: 1.5rem;
 }
-
 header img#logo {
   width: 15%;
 }
-
 header img#user-logo {
   width: 50px;
   height: 50px;
   border: 3px solid transparent;
   border-radius: 50%;
 }
-
 header img#user-logo:hover {
   cursor: pointer;
   border: 3px solid var(--primary-color);
@@ -59,24 +54,21 @@ header img#user-logo:hover {
   padding: 8vh 1vw;
   height: 100vh;
   font-size: 1.1rem;
+  min-width: -moz-max-content;
   min-width: max-content;
 }
-
 #menu-navigation > nav > h2 {
   font-weight: 600;
   padding: 5px 10px;
 }
-
 #menu-navigation > nav > a {
   display: flex;
   justify-content: flex-end;
   align-items: center;
 }
-
 #menu-navigation > nav > ul {
   list-style: none;
 }
-
 #menu-navigation > nav > ul > li {
   padding: 5px 10px;
   border-radius: 20px;
@@ -84,41 +76,84 @@ header img#user-logo:hover {
   display: block;
   align-items: center;
 }
-
 #menu-navigation > nav > ul > li:hover {
-  color: var(--primary-color);
-  background-color: var(--light-primary-color);
+  background-color: var(--primary-color);
+  color: var(--white-color);
 }
-
 #menu-navigation > nav > ul > li > i {
   margin-right: 5px;
 }
-
 #menu-navigation > nav > ul > li > a {
   text-decoration: none;
   font-weight: 400;
-  color: #041E49;
+  color: var(--dark-color);
 }
 
 #user-navigation {
   display: none;
+  width: -moz-max-content;
   width: max-content;
   background-color: var(--white-color);
   border-radius: 0 0 20px 20px;
   padding: 10px;
   right: 30px;
-  box-shadow: 0 8px 10px #00000020;
+  top: 10px;
+  box-shadow: 0 8px 10px rgba(0, 0, 0, 0.1254901961);
 }
-
 #user-navigation[visibile] {
   display: block;
   position: absolute;
 }
-
-#user-navigation > ul > li {
+#user-navigation > nav {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 20px;
+}
+#user-navigation > nav ul {
+  list-style: none;
+}
+#user-navigation > nav ul li {
+  padding: 5px 10px;
+  border-radius: 20px;
+  cursor: pointer;
+  display: block;
+  align-items: center;
+}
+#user-navigation > nav ul:hover {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+}
+#user-navigation > nav ul i {
+  margin-right: 5px;
+}
+#user-navigation > nav ul a {
+  text-decoration: none;
+  font-weight: 400;
+  color: var(--dark-color);
+}
+#user-navigation h2 {
+  font-weight: 500;
+  padding: 5px 10px;
+}
+#user-navigation a {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+#user-navigation a:hover {
+  color: var(--primary-color);
+}
+
+footer {
+  background-color: var(--white-color);
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 2vh 2vw;
+}
+footer p {
+  font-size: 0.9rem;
+  color: var(--dark-color);
 }
 
 .stripes {
@@ -135,7 +170,7 @@ header img#user-logo:hover {
 }
 
 body {
-  background-color: var(--white-color);
+  background-color: var(--light-color);
   min-height: 100vh;
 }
 
@@ -143,19 +178,6 @@ main {
   padding: 0 2vw 0 0;
   display: flex;
   gap: 20px;
-}
-
-footer {
-  background-color: var(--white-color);
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  padding: 2vh 2vw;
-}
-
-footer > p {
-  font-size: 0.9rem;
-  color: var(--dark-color);
 }
 
 .box {
@@ -166,19 +188,23 @@ footer > p {
   display: flex;
   flex-direction: column;
 }
-
 .box .box-header {
   font-size: large;
   font-weight: 500;
 }
-
 .box .box-main {
   font-size: medium;
   font-weight: 300;
-  margin: 10px 0;
 }
 
-.box .box-footer {
-  font-size: small;
-  font-weight: 300;
+nav > section#user-nav-header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+  gap: 10px;
+  border-bottom: 1px solid var(--dark-color);
+}
+nav > section#user-nav-header > h3 {
+  font-weight: 500;
 }
