@@ -1,6 +1,7 @@
 /* Importing external CSS files */
 @import url(fonts.css); /* importing fonts.css */
 @import url(config.css); /* importing config.css */
+@import url(icons.css); /* importing icons.css */
 @import url(other/home.css); /* importing home.css from the other directory */
 @import url(other/voti.css); /* importing voti.css from the other directory */
 @import url(other/login.css); /* importing login.css from the other directory */
@@ -36,7 +37,7 @@ header {
     }
   }
   img#logo {
-    width: 15%;
+    width: 13%;
   }
   img#user-logo {
     width: 50px;
@@ -52,15 +53,12 @@ header {
 
 #menu-navigation {
   background-color: #EAF1FB;
-  padding: 8vh 1vw;
+  padding: 8vh 1vw ;
   height: 100vh;
   font-size: 1.1rem;
   min-width: max-content;
+  flex-grow: 1;
   >nav {
-    >h2 {
-      font-weight: 600;
-      padding: 5px 10px;
-    }
     >a {
       display: flex;
       justify-content: flex-end;
@@ -69,7 +67,7 @@ header {
     >ul {
       list-style: none;
       >li {
-        padding: 5px 10px;
+        padding: 1vh 1vw;
         border-radius: 20px;
         cursor: pointer;
         display: flex;
@@ -78,12 +76,17 @@ header {
           background-color: var(--primary-color);
           color: var(--white-color);
         }
+        @mixin li-text {
+          font-size: 1.1rem;
+        }
         >i {
           margin-right: 5px;
+          @include li-text;
         }
         >a {
           text-decoration: none;
-          font-weight: 400;
+          @include li-text;
+          font-weight: 500;
           color: var(--dark-color);
         }
       }

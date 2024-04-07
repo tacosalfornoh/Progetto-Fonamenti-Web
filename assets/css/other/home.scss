@@ -3,7 +3,7 @@
   grid-template-areas: "sommario lezioni" "prestazioni lezioni";
   grid-template-columns: 2fr 1fr;
   grid-template-rows: 20vh 50vh;
-  grid-gap: 10px;
+  grid-gap: 15px;
   padding: 100px 0 0 0;
 }
 
@@ -12,36 +12,63 @@
   display: flex;
   gap: 10px;
   .box {
+    justify-content: space-between;
     height: 100%;
     width: -webkit-fill-available;
-	border-radius: 0;
+    border-radius: 0;
     background-color: var(--light-success-color);
-    i {
-      font-size: 3rem;
+    font-size: 2.5em;
+    line-height: 1.3em;
+    h3 {
       color: var(--success-color);
+      font-weight: 600;
     }
-	p {
-		display: flex;
-		align-items: start;
-		font-size: 3rem;
-		i {
-			font-size: 1rem;
-		}
-	}
+    h4 {
+      font-weight: 800;
+      font-size: 1.5em;
+      display: flex;
+      align-items: flex-start;
+      i {
+        font-size: 0.5em;
+        font-weight: 900;
+        color: var(--success-color);
+      }
+    }
+    a {
+      text-align: end;
+      font-weight: 400;
+      font-size: 0.4em;
+      cursor: pointer;
+      &:hover {
+        transition: all 0s ease-in-out;
+        color: var(--success-color);
+        text-decoration: underline;
+      }
+    }
     &:first-of-type {
       background-color: var(--light-primary-color);
-	  border-radius: 20px 0 0 0;
-      i {
-        font-size: 3rem;
+      border-radius: 20px 0 0 20px;
+      h3 {
         color: var(--primary-color);
+      }
+      a {
+        &:hover {
+          color: var(--primary-color);
+          text-decoration: underline;
+        }
       }
     }
     &:last-of-type {
       background-color: var(--light-danger-color);
-	  border-radius: 0;
-      i {
-        font-size: 3rem;
+      border-radius: 0 20px 20px 0;
+      h3 {
         color: var(--danger-color);
+      }
+      a {
+        &:hover {
+          color: var(--danger-color);
+          text-decoration: underline;
+        }
       }
     }
   }
@@ -49,16 +76,45 @@
 #prestazioni {
   grid-area: prestazioni;
   .box {
-    border-radius: 0 0 0 20px;
+    border-radius: 20px;
     height: 100%;
   }
 }
 #lezioni {
   grid-area: lezioni;
   .box {
-    height: 18.8%;
-    margin-bottom: 5px;
+    display: flex;
+    flex-direction: row;
+    height: calc((70vh + 15px - (0.5em * 4)) / 5);
+    margin-bottom: 0.5em;
     border-radius: 0;
+    .v-line {
+      width: 10px;
+      background-color: red;
+      border-radius: 20px;
+      height: 100%;
+      margin: 0 10px 0 0;
+    }
+    aside {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      h5 {
+        font-size: 2em;
+        font-weight: 900;
+        display: flex;
+        justify-content: space-between;
+      }
+      h6 {
+        font-size: 1em;
+        font-weight: 400;
+      }
+      p {
+        text-align: end;
+      }
+    }
     &:first-of-type {
       border-radius: 20px 20px 0 0;
     }
