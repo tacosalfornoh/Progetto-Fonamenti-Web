@@ -1,10 +1,1 @@
-{
-  "version": 3,
-  "sources": [
-    "compiti.scss",
-    "../compiti.css"
-  ],
-  "names": [],
-  "mappings": "AAEA;EACC,aAAA;EACA,mBAAA;EACA,SAAA;ACDD;ADEC;EACC,UAAA;EACA,aAAA;EACA,sBAAA;EACA,WAAA;ACAF;;ADIC;EACC,4BAAA;EAAA,uBAAA;EACA,eAAA;ACDF;ADEE;EACC,gCAlBkB;ACkBrB",
-  "file": "../compiti.css"
-}
+{"version":3,"sources":["compiti.scss","compiti.css"],"names":[],"mappings":"AAEA;EACC,aAAA;EACA,mBAAA;EACA,SAAA;ACDD;ADEC;EACC,UAAA;EACA,aAAA;EACA,sBAAA;EACA,WAAA;ACAF;;ADIC;EACC,4BAAA;EAAA,uBAAA;EACA,eAAA;ACDF;ADEE;EACC,gCAlBkB;ACkBrB","file":"compiti.css"}

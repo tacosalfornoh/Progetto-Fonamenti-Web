@@ -103,32 +103,38 @@ header {
   &[visibile] {
     display: block;
     position: absolute;
-  }
-  >nav {
+  }   
+  ul {
+    list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    ul {
-      list-style: none;
-      li {
-        padding: 5px 10px;
-        border-radius: 20px;
-        cursor: pointer;
-        display: block;
-        align-items: center;
-        }
-        &:hover { 
-          background-color: var(--primary-color);
-          color: var(--white-color);
-        }
-        i { 
-          margin-right: 5px;
-        }
-        a {
-          text-decoration: none;
-          font-weight: 400;
-          color: var(--dark-color);
-        }
+    align-items: flex-start;
+    padding-top: 15px;
+    li {
+      padding: 5px 10px;
+      cursor: pointer;
+      display: flex;
+      border-radius: 0;
+      align-items: center;
+      width: 100%;
+      border: solid rgb(217, 217, 217) 2px;
+      &:first-of-type{
+        border-radius: 10px 10px 0 0;
+      }
+      &:last-of-type{
+        border-radius: 0 0 10px 10px;
+      }
+      &:hover { 
+        background-color: var(--stripes);
+      }
+      }
+      i { 
+        margin-right: 5px;
+      }
+      a {
+        text-decoration: none;
+        font-weight: 400;
+        color: var(--dark-color);
       }
     }
     h2 {
@@ -137,10 +143,20 @@ header {
     }
     a {
       display: flex;
-      justify-content: flex-end;
       align-items: center;
       &:hover {
         color: var(--primary-color);
+      }
+    }
+    #user-nav-header{
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 10px;
+      gap: 10px;
+      border-bottom: 1px solid var(--dark-color);
+      >h3 {
+        font-weight: 500;
       }
     }
   }
@@ -196,17 +212,4 @@ main {
     font-size: medium;
     font-weight: 300;
   }
-}
-
-nav>section#user-nav-header{
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 10px;
-  gap: 10px;
-  border-bottom: 1px solid var(--dark-color);
-  >h3 {
-    font-weight: 500;
-  }
-  
 }
