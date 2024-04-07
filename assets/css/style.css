@@ -94,7 +94,7 @@ header img#user-logo:hover {
   width: -moz-max-content;
   width: max-content;
   background-color: var(--white-color);
-  border-radius: 0 0 20px 20px;
+  border-radius: 20px;
   padding: 10px;
   right: 30px;
   top: 10px;
@@ -104,52 +104,75 @@ header img#user-logo:hover {
   display: block;
   position: absolute;
 }
-#user-navigation ul {
+
+#user-nav-header {
+  display: flex;
+  align-items: flex-start;
+  padding: 10px;
+  gap: 10px;
+  border-bottom: 1px solid var(--dark-color);
+}
+#user-nav-header > article {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+#user-nav-header > aside {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+#user-nav-header > aside #logout {
+  font-size: 0.5rem;
+  visibility: hidden;
+}
+#user-nav-header > aside #logout[visibile] {
+  visibility: visible;
+}
+#user-nav-header > h3 {
+  font-weight: 500;
+}
+
+#user-nav-body a {
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+}
+#user-nav-body ul {
   list-style: none;
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
-#user-navigation ul li {
+#user-nav-body ul li {
   padding: 5px 10px;
   border-radius: 20px;
   cursor: pointer;
   display: flex;
   align-items: center;
 }
-#user-navigation ul li:hover {
+#user-nav-body ul li:hover {
   background-color: var(--primary-color);
   color: var(--white-color);
 }
-#user-navigation ul li i {
+#user-nav-body ul li i {
   margin-right: 5px;
 }
-#user-navigation ul li a {
+#user-nav-body ul li a {
   text-decoration: none;
   font-weight: 400;
   color: var(--dark-color);
 }
-#user-navigation h2 {
+#user-nav-body h2 {
   font-weight: 500;
   padding: 5px 10px;
 }
-#user-navigation a {
+#user-nav-body a {
   display: flex;
   align-items: center;
 }
-#user-navigation a:hover {
+#user-nav-body a:hover {
   color: var(--primary-color);
-}
-#user-navigation #user-nav-header {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 10px;
-  gap: 10px;
-  border-bottom: 1px solid var(--dark-color);
-}
-#user-navigation #user-nav-header > h3 {
-  font-weight: 500;
 }
 
 footer {
@@ -203,4 +226,4 @@ main {
 .box .box-main {
   font-size: medium;
   font-weight: 300;
-}
+}/*# sourceMappingURL=style.css.map */
