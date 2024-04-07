@@ -1,59 +1,71 @@
 #home {
-    display: grid;
-    grid-template-areas: 
-        "sommario lezioni"
-        "prestazioni lezioni";
-    grid-template-columns: 2fr 1fr;
-    grid-gap: 20px;
-    padding: 100px 0 0 0;
+  display: grid;
+  grid-template-areas: "sommario lezioni" "prestazioni lezioni";
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 20vh 50vh;
+  grid-gap: 10px;
+  padding: 100px 0 0 0;
 }
-
 
 #sommario {
-    grid-area: sommario;
-    display: flex;
-    gap: 20px;
+  grid-area: sommario;
+  display: flex;
+  gap: 10px;
 }
 #sommario .box {
-    height: fit-content;
-    min-height: max-content;
-    flex-grow: 1;
-    background-color: var(--light-success-color);
+  height: 100%;
+  width: -webkit-fill-available;
+  border-radius: 0;
+  background-color: var(--light-success-color);
 }
 #sommario .box i {
-    font-size: 3rem;
-    color: var(--success-color);
+  font-size: 3rem;
+  color: var(--success-color);
+}
+#sommario .box p {
+  display: flex;
+  align-items: start;
+  font-size: 3rem;
+}
+#sommario .box p i {
+  font-size: 1rem;
 }
 #sommario .box:first-of-type {
-    background-color: var(--light-primary-color);
+  background-color: var(--light-primary-color);
+  border-radius: 20px 0 0 0;
 }
 #sommario .box:first-of-type i {
-    font-size: 3rem;
-    color: var(--primary-color);
+  font-size: 3rem;
+  color: var(--primary-color);
 }
 #sommario .box:last-of-type {
-    background-color: var(--light-danger-color);
+  background-color: var(--light-danger-color);
+  border-radius: 0;
 }
 #sommario .box:last-of-type i {
-    font-size: 3rem;
-    color: var(--danger-color);
+  font-size: 3rem;
+  color: var(--danger-color);
 }
 
 #prestazioni {
-    grid-area: prestazioni;
+  grid-area: prestazioni;
+}
+#prestazioni .box {
+  border-radius: 0 0 0 20px;
+  height: 100%;
 }
 
 #lezioni {
-    grid-area: lezioni;
+  grid-area: lezioni;
 }
 #lezioni .box {
-    height: max-content;
-    margin-bottom: 5px;
-    border-radius: 0;
+  height: 18.8%;
+  margin-bottom: 5px;
+  border-radius: 0;
 }
 #lezioni .box:first-of-type {
-    border-radius: 20px 20px 0 0;
+  border-radius: 20px 20px 0 0;
 }
 #lezioni .box:last-of-type {
-    border-radius: 0 0 20px 20px; 
+  border-radius: 0 0 20px 20px;
 }

@@ -123,11 +123,9 @@ header img#user-logo:hover {
 #user-navigation ul li:first-of-type {
   border-radius: 10px 10px 0 0;
 }
-#user-navigation ul li:last-of-type {
-  border-radius: 0 0 10px 10px;
-}
-#user-navigation ul li:hover {
-  background-color: var(--stripes);
+#user-navigation > nav ul:hover {
+  background-color: var(--primary-color);
+  color: var(--white-color);
 }
 #user-navigation ul i {
   margin-right: 5px;
