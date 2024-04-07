@@ -72,7 +72,7 @@ header {
         padding: 5px 10px;
         border-radius: 20px;
         cursor: pointer;
-        display: block;
+        display: flex;
         align-items: center;
         &:hover {
           background-color: var(--primary-color);
@@ -109,36 +109,12 @@ header {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    ul {
-      list-style: none;
-      li {
+    li {
         padding: 5px 10px;
-        #giornate {
-          display: flex;
-          flex-direction: row;
-          gap: 20px;
-          #compiti {
-            width: 20%;
-            display: flex;
-            flex-direction: column;
-            gap: 20px 0;
-          }
-        }
-        #compiti {
-          article {
-            max-height: max-content;
-            cursor: pointer;
-            &:hover {
-              background-color: var(--stripes);
-            }
-          }
-        }
-        
         border-radius: 20px;
         cursor: pointer;
-        display: block;
+        display: flex;
         align-items: center;
-        }
         &:hover { 
           background-color: var(--primary-color);
           color: var(--white-color);
