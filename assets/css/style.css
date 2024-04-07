@@ -119,6 +119,25 @@ header img#user-logo:hover {
   display: block;
   align-items: center;
 }
+#user-navigation > nav ul li #giornate {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+#user-navigation > nav ul li #giornate #compiti {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px 0;
+}
+#user-navigation > nav ul li #compiti article {
+  max-height: -moz-max-content;
+  max-height: max-content;
+  cursor: pointer;
+}
+#user-navigation > nav ul li #compiti article:hover {
+  background-color: var(--stripes);
+}
 #user-navigation > nav ul:hover {
   background-color: var(--primary-color);
   color: var(--white-color);

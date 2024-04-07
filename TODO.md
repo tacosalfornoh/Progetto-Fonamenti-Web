@@ -1,5 +1,4 @@
 - TODO Menu Navigation
-- TODO User Navigation
 - FIXME Design Home
 - FIXME Design Voti
 - FIXME Design Compiti
