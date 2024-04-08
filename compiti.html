@@ -2,9 +2,18 @@
 <html lang="it">
   <head>
     <title><?html echo getImpostazioni()['website_name']; ?></title>
-    <meta name="description" content="<?html echo getImpostazioni()['website_desc']; ?>">
-    <meta name="author" content="<?html echo getImpostazioni()['website_author']; ?>">
-    <meta name="keywords" content="<?html echo getImpostazioni()['website_keywords']; ?>" />
+    <meta
+      name="description"
+      content="<?html echo getImpostazioni()['website_desc']; ?>"
+    />
+    <meta
+      name="author"
+      content="<?html echo getImpostazioni()['website_author']; ?>"
+    />
+    <meta
+      name="keywords"
+      content="<?html echo getImpostazioni()['website_keywords']; ?>"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
     <script
@@ -15,7 +24,16 @@
   <body>
     <header>
       <a href="#">
-        <img id="user-logo" style="width: 50px; height: 50px; border-radius: 50%;"
+        <i class="fas fa-bars"></i>
+        <img
+          id="logo"
+          src="https://cdn.icon-icons.com/icons2/640/PNG/512/cloud-shape-sky-storage-internet-brand_icon-icons.com_59164.png"
+          alt="logo"
+        />
+      </a>
+      <a href="#">
+        <img
+          id="user-logo"
           src="https://media.istockphoto.com/id/471927031/it/foto/testa-quadrata-uomo.jpg?s=1024x1024&w=is&k=20&c=P8kyX2JwfAiEOyYUzcE1IIe8Mr5PF_S4_Hp-2XWWiHY="
           alt="logo"
         />
@@ -27,7 +45,7 @@
             src="https://media.istockphoto.com/id/471927031/it/foto/testa-quadrata-uomo.jpg?s=1024x1024&w=is&k=20&c=P8kyX2JwfAiEOyYUzcE1IIe8Mr5PF_S4_Hp-2XWWiHY="
             alt="logo" 
           />
-          <h3>mariorossi@gmail.com</h3>
+          <h3>mariorossi@ gmail.com</h3>
           </article>
           <aside>
             <i id="icona-logout" class="fa-solid fa-right-from-bracket"></i>
@@ -52,6 +70,33 @@
       </nav>  
     </header>
     <main>
+      <div class="stripes"></div>
+      <section id="menu-navigation">
+        <nav>
+          <ul>
+            <li>
+              <i class="fas fa-home"></i>
+              <a href="index.html">Home</a>
+            </li>
+            <li>
+              <i class="fas fa-book"></i>
+              <a href="compiti.html">Compiti</a>
+            </li>
+            <li>
+              <i class="fas fa-award"></i>
+              <a href="voti.html">Voti</a>
+            </li>
+            <li>
+              <i class="fas fa-book-reader"></i>
+              <a href="materiale.html">Materiale</a>
+            </li>
+            <li>
+              <i class="fas fa-calendar-alt"></i>
+              <a href="frequenze.html">Frequenze</a>
+            </li>
+          </ul>
+        </nav>
+      </section>
       <section id="giornate">
         <section id="compiti">
           <h1>Lunedì 1 marzo</h1>

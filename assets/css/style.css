@@ -7,6 +7,7 @@
 @import url(other/login.css); /* importing login.css from the other directory */
 @import url(other/compiti.css); /* importing compiti.css from the other directory */
 * {
+  cursor: default;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -17,23 +18,31 @@
   font-style: normal;
 }
 
+a:hover {
+  cursor: pointer;
+}
+
 header {
   z-index: 1000;
   position: fixed;
   width: 100%;
-  padding: 1vh 2vw;
+  padding: 1vh 2vw 1vh 1vw;
   top: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-header > a {
+header > section {
+  gap: 15px;
   display: flex;
   align-items: center;
-  text-decoration: none;
-  gap: 10px;
 }
-header > a > i {
+header > section a {
+  text-decoration: none;
+}
+header > section i {
+  padding-left: 10px;
+  cursor: pointer;
   font-size: 1.5rem;
 }
 header img#logo {
@@ -51,13 +60,12 @@ header img#user-logo:hover {
 }
 
 #menu-navigation {
-  background-color: #EAF1FB;
-  padding: 8vh 1vw;
+  background-color: var(--stripes);
+  padding: 8vh 1vw 0 1vw;
   height: 100vh;
   font-size: 1.1rem;
   min-width: -moz-max-content;
   min-width: max-content;
-  flex-grow: 1;
 }
 #menu-navigation > nav > a {
   display: flex;
@@ -68,15 +76,22 @@ header img#user-logo:hover {
   list-style: none;
 }
 #menu-navigation > nav > ul > li {
-  padding: 1vh 1vw;
-  border-radius: 20px;
+  padding: 10px;
   cursor: pointer;
   display: flex;
+  margin-bottom: 3px;
   align-items: center;
+  background-color: var(--light-color);
 }
 #menu-navigation > nav > ul > li:hover {
-  background-color: var(--primary-color);
+  background-color: var(--light-primary-color);
   color: var(--white-color);
+}
+#menu-navigation > nav > ul > li:first-of-type {
+  border-radius: 20px 20px 0 0;
+}
+#menu-navigation > nav > ul > li:last-of-type {
+  border-radius: 0 0 20px 20px;
 }
 #menu-navigation > nav > ul > li > i {
   margin-right: 5px;
@@ -88,6 +103,15 @@ header img#user-logo:hover {
   font-weight: 500;
   color: var(--dark-color);
 }
+#menu-navigation[aria-expanded=false] {
+  padding-left: 0.5vw;
+}
+#menu-navigation[aria-expanded=false] li {
+  flex-direction: column;
+}
+#menu-navigation[aria-expanded=false] li a {
+  font-size: 0.7em;
+}
 
 #user-navigation {
   display: none;
@@ -95,84 +119,106 @@ header img#user-logo:hover {
   width: max-content;
   background-color: var(--white-color);
   border-radius: 20px;
-  padding: 10px;
-  right: 30px;
-  top: 10px;
+  right: 100px;
+  top: 20px;
   box-shadow: 0 8px 10px rgba(0, 0, 0, 0.1254901961);
 }
 #user-navigation[visibile] {
   display: block;
   position: absolute;
 }
-
-#user-nav-header {
+#user-navigation #user-nav-header {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   padding: 10px;
-  gap: 10px;
-  border-bottom: 1px solid var(--dark-color);
+  border-radius: 20px 20px 0 0;
+  gap: 20px;
+  box-shadow: var(--box-shadow);
+  background-color: var(--light-color);
 }
-#user-nav-header > article {
+#user-navigation #user-nav-header > article {
   display: flex;
   align-items: center;
   gap: 5px;
 }
-#user-nav-header > aside {
+#user-navigation #user-nav-header > aside {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
 }
-#user-nav-header > aside #logout {
+#user-navigation #user-nav-header > aside #logout {
   font-size: 0.5rem;
+  font-weight: 900;
   visibility: hidden;
 }
-#user-nav-header > aside #logout[visibile] {
+#user-navigation #user-nav-header > aside #logout[visibile] {
   visibility: visible;
 }
-#user-nav-header > h3 {
-  font-weight: 500;
+#user-navigation #user-nav-header > h3 {
+  font-weight: 400;
 }
-
-#user-nav-body a {
+#user-navigation #user-nav-body {
+  padding: 20px 10px 20px 10px;
   display: flex;
-  justify-content: center;
-  text-decoration: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
 }
-#user-nav-body ul {
+#user-navigation #user-nav-body > a {
+  display: flex;
+  border-radius: 20px;
+  border: 1px solid var(--border-primary-color);
+  width: -moz-max-content;
+  width: max-content;
+  padding: 5px;
+  justify-items: center;
+  text-decoration: none;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+#user-navigation #user-nav-body > a:hover {
+  background-color: var(--light-primary-color);
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+#user-navigation #user-nav-body ul {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  width: 100%;
+  gap: 3px;
 }
-#user-nav-body ul li {
-  padding: 5px 10px;
-  border-radius: 20px;
+#user-navigation #user-nav-body ul li {
+  background-color: var(--light-color);
+  padding: 10px;
   cursor: pointer;
   display: flex;
   align-items: center;
 }
-#user-nav-body ul li:hover {
-  background-color: var(--primary-color);
-  color: var(--white-color);
+#user-navigation #user-nav-body ul li:hover {
+  background-color: var(--light-primary-color);
+  color: var(--primary-color);
 }
-#user-nav-body ul li i {
-  margin-right: 5px;
+#user-navigation #user-nav-body ul li:first-of-type {
+  border-radius: 10px 10px 0 0;
+  justify-content: space-between;
 }
-#user-nav-body ul li a {
+#user-navigation #user-nav-body ul li:last-of-type {
+  border-radius: 0 0 10px 10px;
+}
+#user-navigation #user-nav-body ul li a {
   text-decoration: none;
   font-weight: 400;
   color: var(--dark-color);
 }
-#user-nav-body h2 {
+#user-navigation #user-nav-body ul li > i {
+  color: var(--dark-color);
+  background-color: var(--stripes);
+  border-radius: 50%;
+}
+#user-navigation #user-nav-body h2 {
   font-weight: 500;
   padding: 5px 10px;
-}
-#user-nav-body a {
-  display: flex;
-  align-items: center;
-}
-#user-nav-body a:hover {
-  color: var(--primary-color);
 }
 
 footer {
@@ -226,4 +272,4 @@ main {
 .box .box-main {
   font-size: medium;
   font-weight: 300;
-}/*# sourceMappingURL=style.css.map */
+}

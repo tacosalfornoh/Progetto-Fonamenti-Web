@@ -13,6 +13,7 @@
   gap: 10px;
 }
 #sommario .box {
+  padding-bottom: 0;
   justify-content: space-between;
   height: 100%;
   width: -webkit-fill-available;
@@ -34,12 +35,12 @@
 #sommario .box h4 i {
   font-size: 0.5em;
   font-weight: 900;
-  color: var(--success-color);
+  color: var(--old-success-color);
 }
 #sommario .box a {
   text-align: end;
   font-weight: 400;
-  font-size: 0.4em;
+  font-size: 1rem;
   cursor: pointer;
 }
 #sommario .box a:hover {

@@ -8,6 +8,7 @@
 @import url(other/compiti.css); /* importing compiti.css from the other directory */
 
 * {
+  cursor: default;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -18,21 +19,29 @@
   font-style: normal;
 }
 
+a:hover {
+  cursor: pointer;
+}
+
 header {
   z-index: 1000;
   position: fixed;
   width: 100%;
-  padding: 1vh 2vw;
+  padding: 1vh 2vw 1vh 1vw;
   top: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  > a {
+  > section {
+    gap: 15px;
     display: flex;
     align-items: center;
-    text-decoration: none;
-    gap: 10px;
-    > i {
+    a {
+      text-decoration: none;
+    }
+    i {
+      padding-left: 10px;
+      cursor: pointer;
       font-size: 1.5rem;
     }
   }
@@ -52,43 +61,58 @@ header {
 }
 
 #menu-navigation {
-  background-color: #EAF1FB;
-  padding: 8vh 1vw ;
+  background-color: var(--stripes);
+  padding: 8vh 1vw 0 1vw;
   height: 100vh;
   font-size: 1.1rem;
   min-width: max-content;
-  flex-grow: 1;
-  >nav {
-    >a {
+  > nav {
+    > a {
       display: flex;
       justify-content: flex-end;
       align-items: center;
     }
-    >ul {
+    > ul {
       list-style: none;
-      >li {
-        padding: 1vh 1vw;
-        border-radius: 20px;
+      > li {
+        padding: 10px;
         cursor: pointer;
         display: flex;
+        margin-bottom: 3px;
         align-items: center;
+        background-color: var(--light-color);
         &:hover {
-          background-color: var(--primary-color);
+          background-color: var(--light-primary-color);
           color: var(--white-color);
+        }
+        &:first-of-type {
+          border-radius: 20px 20px 0 0;
+        }
+        &:last-of-type {
+          border-radius: 0 0 20px 20px;
         }
         @mixin li-text {
           font-size: 1.1rem;
         }
-        >i {
+        > i {
           margin-right: 5px;
           @include li-text;
         }
-        >a {
+        > a {
           text-decoration: none;
           @include li-text;
           font-weight: 500;
           color: var(--dark-color);
         }
+      }
+    }
+  }
+  &[aria-expanded="false"] {
+    padding-left: 0.5vw;
+    li {
+      flex-direction: column;
+      a {
+        font-size: 0.7em;
       }
     }
   }
@@ -99,70 +123,97 @@ header {
   width: max-content;
   background-color: var(--white-color);
   border-radius: 20px;
-  padding: 10px;
-  right: 30px;
-  top: 10px;
+  right: 100px;
+  top: 20px;
   box-shadow: 0 8px 10px #00000020;
   &[visibile] {
     display: block;
     position: absolute;
-  }   
-}
-#user-nav-header{
-  display: flex;;
-  align-items: flex-start;
-  padding: 10px;
-  gap: 10px;
-  border-bottom: 1px solid var(--dark-color);
-  >article{
+  }
+  #user-nav-header {
     display: flex;
     align-items: center;
-    gap: 5px;
-  }
-  >aside{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    #logout{
-      font-size: 0.5rem;
-      visibility: hidden;
-      &[visibile] {
-        visibility: visible;
+    padding: 10px;
+    border-radius: 20px 20px 0 0;
+    gap: 20px;
+    box-shadow: var(--box-shadow);
+    background-color: var(--light-color);
+    > article {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    > aside {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      #logout {
+        font-size: 0.5rem;
+        font-weight: 900;
+        visibility: hidden;
+        &[visibile] {
+          visibility: visible;
+        }
       }
     }
+    > h3 {
+      font-weight: 400;
+    }
   }
-  >h3 {
-    font-weight: 500;
-  }
-}
-#user-nav-body{
-  a {
-    display: flex;
-    justify-content: center;
-    text-decoration: none;
-  }
-  ul {
-    list-style: none;
+  #user-nav-body {
+    padding: 20px 10px 20px 10px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    li {
-        padding: 5px 10px;
-        border-radius: 20px;
+    align-items: center;
+    gap: 10px;
+    > a {
+      display: flex;
+      border-radius: 20px;
+      border: 1px solid var(--border-primary-color);
+      width: max-content;
+      padding: 5px;
+      justify-items: center;
+      text-decoration: none;
+      font-weight: 500;
+      margin-bottom: 20px;
+      &:hover {
+        background-color: var(--light-primary-color);
+        border-color: var(--primary-color);
+        color: var(--primary-color);
+      }
+    }
+    ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      gap: 3px;
+      li {
+        background-color: var(--light-color);
+        padding: 10px;
         cursor: pointer;
         display: flex;
         align-items: center;
-        &:hover { 
-          background-color: var(--primary-color);
-          color: var(--white-color);
+        &:hover {
+          background-color: var(--light-primary-color);
+          color: var(--primary-color);
         }
-        i { 
-          margin-right: 5px;
+        &:first-of-type {
+          border-radius: 10px 10px 0 0;
+          justify-content: space-between;
+        }
+        &:last-of-type {
+          border-radius: 0 0 10px 10px;
         }
         a {
           text-decoration: none;
           font-weight: 400;
           color: var(--dark-color);
+        }
+        > i {
+          color: var(--dark-color);
+          background-color: var(--stripes);
+          border-radius: 50%;
         }
       }
     }
@@ -170,14 +221,8 @@ header {
       font-weight: 500;
       padding: 5px 10px;
     }
-    a {
-      display: flex;
-      align-items: center;
-      &:hover {
-        color: var(--primary-color);
-      }
-    }
   }
+}
 
 footer {
   background-color: var(--white-color);

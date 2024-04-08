@@ -1,18 +1,18 @@
-$background-color_1: var(--stripes);
-
 #voti {
 	display: flex;
 	flex-direction: row;
-	gap: 80px;
+	gap: 20px;
+	padding: 100px 0 0 0;
+	width: 100%;
 	aside {
-		flex-grow: 100;
 		>article {
+			width: 100%;
 			display: grid;
 			grid-template-columns: 1fr 10fr;
 			align-items: center;
 			gap: 20px;
 			padding: 10px;
-			background-color: $background-color_1;
+			background-color: var(--stripes);
 			border-radius: 20px;
 			margin: 5px;
 		}
@@ -38,7 +38,6 @@ $background-color_1: var(--stripes);
 	article.box {
 		margin-bottom: 25px;
 	}
-	flex-grow: 1;
 	>article {
 		>p {
 			display: flex;
