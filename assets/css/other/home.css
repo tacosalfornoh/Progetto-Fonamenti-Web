@@ -13,14 +13,12 @@
   gap: 10px;
 }
 #sommario .box {
-  padding-bottom: 0;
   justify-content: space-between;
   height: 100%;
   width: -webkit-fill-available;
   border-radius: 0;
   background-color: var(--light-success-color);
   font-size: 2.5em;
-  line-height: 1.3em;
 }
 #sommario .box h3 {
   color: var(--success-color);
@@ -28,7 +26,7 @@
 }
 #sommario .box h4 {
   font-weight: 800;
-  font-size: 1.5em;
+  font-size: 3rem;
   display: flex;
   align-items: flex-start;
 }

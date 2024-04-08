@@ -6,6 +6,8 @@
 @import url(other/voti.css); /* importing voti.css from the other directory */
 @import url(other/login.css); /* importing login.css from the other directory */
 @import url(other/compiti.css); /* importing compiti.css from the other directory */
+@import url(responsives/laptop.css); /* importing laptop.css from the responsives directory */
+@import url(responsives/tablet.css); /* importing tablet.css from the responsives directory */
 
 * {
   cursor: default;
@@ -130,7 +132,8 @@ header {
   top: 20px;
   box-shadow: 0 8px 10px #00000020;
   &[visibile] {
-    display: block;
+    display: flex;
+    flex-direction: column;
     position: absolute;
   }
   #user-nav-header {
@@ -234,7 +237,7 @@ footer {
   width: 100%;
   padding: 2vh 2vw;
   p {
-    font-size: 0.9rem;
+    font-size: 0.9em;
     color: var(--dark-color);
   }
 }
@@ -257,18 +260,18 @@ body {
   min-height: 100vh;
   &[data-loader] {
     .loader {
-      opacity: 1;
       display: flex;
       width: 100%;
       height: 100%;
       background-color: red;
-      position: fixed;
+      position: absolute;
       z-index: 1001;
     }
   }
   &[data-loader="false"] {
     .loader {
-      opacity: 0;
+      z-index: -2;
+      display: none;
     }
   }
 }

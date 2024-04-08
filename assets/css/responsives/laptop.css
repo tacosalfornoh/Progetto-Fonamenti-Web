@@ -1,0 +1,70 @@
+@media only screen and (max-width: 430px) {
+  header {
+    background-color: var(--white-color);
+  }
+  header #user-navigation {
+    right: 2vw;
+    top: 8vh;
+  }
+  main {
+    padding: 0px !important;
+  }
+  main #menu-navigation {
+    display: none;
+    position: absolute;
+    width: 100%;
+  }
+  main #menu-navigation li {
+    background-color: var(--stripes);
+  }
+  main #menu-navigation[aria-expanded=false] {
+    display: block;
+    background-color: var(--white-color);
+    box-shadow: var(--box-shadow);
+    border-radius: 20px;
+    padding: 12vh 5vw;
+  }
+  main #menu-navigation[aria-expanded=false] li {
+    background-color: var(--light-color);
+    flex-direction: row;
+  }
+  main #menu-navigation[aria-expanded=false] li a {
+    font-size: 1em;
+  }
+  main #menu-navigation[aria-expanded=false] li a i {
+    font-size: 1.5em;
+  }
+  main #home {
+    grid-template-areas: "sommario" "lezioni" "prestazioni";
+    grid-template-columns: 1fr;
+    grid-template-rows: 60vh 80vh 50vh;
+    padding: 100px 50px;
+    gap: 50px;
+  }
+  main #home #sommario {
+    flex-direction: column;
+  }
+  main #home #sommario .box h3 {
+    font-size: 0.8em;
+  }
+  main #home #sommario .box h4 {
+    margin-top: -3px;
+    font-size: 1em;
+  }
+  main #home #sommario .box h4 i {
+    font-size: 0.5em;
+  }
+  main #home #sommario .box:first-of-type {
+    border-radius: 20px 20px 0 0;
+  }
+  main #home #sommario .box:last-of-type {
+    border-radius: 0 0 20px 20px;
+  }
+  main #lezioni .box {
+    height: calc((80vh - 2em) / 5);
+  }
+  footer {
+    position: default;
+    padding: 20px;
+  }
+}

@@ -6,6 +6,8 @@
 @import url(other/voti.css); /* importing voti.css from the other directory */
 @import url(other/login.css); /* importing login.css from the other directory */
 @import url(other/compiti.css); /* importing compiti.css from the other directory */
+@import url(responsives/laptop.css); /* importing laptop.css from the responsives directory */
+@import url(responsives/tablet.css); /* importing tablet.css from the responsives directory */
 * {
   cursor: default;
   box-sizing: border-box;
@@ -127,7 +129,8 @@ header img#user-logo:hover {
   box-shadow: 0 8px 10px rgba(0, 0, 0, 0.1254901961);
 }
 #user-navigation[visibile] {
-  display: block;
+  display: flex;
+  flex-direction: column;
   position: absolute;
 }
 #user-navigation #user-nav-header {
@@ -232,7 +235,7 @@ footer {
   padding: 2vh 2vw;
 }
 footer p {
-  font-size: 0.9rem;
+  font-size: 0.9em;
   color: var(--dark-color);
 }
 
@@ -254,16 +257,16 @@ body {
   min-height: 100vh;
 }
 body[data-loader] .loader {
-  opacity: 1;
   display: flex;
   width: 100%;
   height: 100%;
   background-color: red;
-  position: fixed;
+  position: absolute;
   z-index: 1001;
 }
 body[data-loader=false] .loader {
-  opacity: 0;
+  z-index: -2;
+  display: none;
 }
 
 main {
