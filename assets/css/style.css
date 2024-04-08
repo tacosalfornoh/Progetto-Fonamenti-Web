@@ -41,7 +41,7 @@ header > section a {
   text-decoration: none;
 }
 header > section i {
-  padding-left: 10px;
+  padding: 10px;
   cursor: pointer;
   font-size: 1.5rem;
 }
@@ -82,6 +82,10 @@ header img#user-logo:hover {
   margin-bottom: 3px;
   align-items: center;
   background-color: var(--light-color);
+  gap: 5px;
+}
+#menu-navigation > nav > ul > li * {
+  cursor: pointer;
 }
 #menu-navigation > nav > ul > li:hover {
   background-color: var(--light-primary-color);
@@ -94,7 +98,6 @@ header img#user-logo:hover {
   border-radius: 0 0 20px 20px;
 }
 #menu-navigation > nav > ul > li > i {
-  margin-right: 5px;
   font-size: 1.1rem;
 }
 #menu-navigation > nav > ul > li > a {
@@ -250,6 +253,18 @@ body {
   background-color: var(--light-color);
   min-height: 100vh;
 }
+body[data-loader] .loader {
+  opacity: 1;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-color: red;
+  position: fixed;
+  z-index: 1001;
+}
+body[data-loader=false] .loader {
+  opacity: 0;
+}
 
 main {
   padding: 0 2vw 0 0;
@@ -272,4 +287,12 @@ main {
 .box .box-main {
   font-size: medium;
   font-weight: 300;
+}
+
+.v-line {
+  width: 10px;
+  background-color: var(--danger-color);
+  border-radius: 20px;
+  height: 100%;
+  margin: 0 10px 0 0;
 }

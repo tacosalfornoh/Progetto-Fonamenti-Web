@@ -1,21 +1,30 @@
 #giornate {
 	display: flex;
 	flex-direction: row;
-	gap: 20px;
+	gap: 10px;
 	padding: 100px 0 0 0;
 	#compiti {
 		width: 20%;
 		display: flex;
 		flex-direction: column;
-		gap: 20px 0;
+		gap: 5px 0;
 	}
 }
 #compiti {
 	article {
+		* {
+			cursor: pointer;
+		}
+		border-radius: 0;
 		max-height: max-content;
-		cursor: pointer;
 		&:hover {
 			background-color: var(--stripes);
+		}
+		&:first-of-type {
+			border-radius: 20px 20px 0 0;
+		}	
+		&:last-of-type {
+			border-radius: 0 0 20px 20px;
 		}
 	}
 }

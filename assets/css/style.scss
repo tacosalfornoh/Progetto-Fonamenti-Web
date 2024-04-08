@@ -40,7 +40,7 @@ header {
       text-decoration: none;
     }
     i {
-      padding-left: 10px;
+      padding: 10px;
       cursor: pointer;
       font-size: 1.5rem;
     }
@@ -81,6 +81,10 @@ header {
         margin-bottom: 3px;
         align-items: center;
         background-color: var(--light-color);
+        gap: 5px;
+        * {
+          cursor: pointer;
+        }
         &:hover {
           background-color: var(--light-primary-color);
           color: var(--white-color);
@@ -95,7 +99,6 @@ header {
           font-size: 1.1rem;
         }
         > i {
-          margin-right: 5px;
           @include li-text;
         }
         > a {
@@ -252,6 +255,22 @@ footer {
 body {
   background-color: var(--light-color);
   min-height: 100vh;
+  &[data-loader] {
+    .loader {
+      opacity: 1;
+      display: flex;
+      width: 100%;
+      height: 100%;
+      background-color: red;
+      position: fixed;
+      z-index: 1001;
+    }
+  }
+  &[data-loader="false"] {
+    .loader {
+      opacity: 0;
+    }
+  }
 }
 
 main {
@@ -275,4 +294,12 @@ main {
     font-size: medium;
     font-weight: 300;
   }
+}
+
+.v-line {
+  width: 10px;
+  background-color: var(--danger-color);
+  border-radius: 20px;
+  height: 100%;
+  margin: 0 10px 0 0;
 }
