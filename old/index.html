@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <title><?html echo getImpostazioni()['website_name']; ?></title>
+    <meta
+      name="description"
+      content="<?html echo getImpostazioni()['website_desc']; ?>"
+    />
+    <meta
+      name="author"
+      content="<?html echo getImpostazioni()['website_author']; ?>"
+    />
+    <meta
+      name="keywords"
+      content="<?html echo getImpostazioni()['website_keywords']; ?>"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+    <script
+      src="https://kit.fontawesome.com/457d18dfca.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body data-theme="light" data-loader="true">
+    <div class="loader"></div>
+    <header>
+      <section>
+        <i class="fe-menu"></i>
+        <a href="index.html">
+          <img
+            id="logo"
+            src="https://cdn.icon-icons.com/icons2/640/PNG/512/cloud-shape-sky-storage-internet-brand_icon-icons.com_59164.png"
+            alt="logo"
+          />
+        </a>
+      </section>
+      <section>
+        <a href="#">
+          <i class="fe-bell"></i>
+          <div class="notification"></div>
+        </a>
+        <i id="theme-selector" class="fe-moon"></i>
+        <img
+          id="user-logo"
+          src="https://media.istockphoto.com/id/471927031/it/foto/testa-quadrata-uomo.jpg?s=1024x1024&w=is&k=20&c=P8kyX2JwfAiEOyYUzcE1IIe8Mr5PF_S4_Hp-2XWWiHY="
+          alt="logo"
+        />
+      </section>
+      <nav id="user-navigation">
+        <section id="user-nav-header">
+          <img
+            id="user-logo"
+            src="https://media.istockphoto.com/id/471927031/it/foto/testa-quadrata-uomo.jpg?s=1024x1024&w=is&k=20&c=P8kyX2JwfAiEOyYUzcE1IIe8Mr5PF_S4_Hp-2XWWiHY="
+            alt="logo"
+          />
+          <h3>mariorossi@ gmail.com</h3>
+          <aside>
+            <i id="icona-logout" class="fe-log-out"></i>
+            <a id="logout" href="logout.html">Logout</a>
+          </aside>
+        </section>
+        <section id="user-nav-body">
+          <h2>Ciao, Alessandro</h2>
+          <a href="gestione-account.html">Gestisci il tuo Account</a>
+          <ul>
+            <li>
+              <a href="anno.html"><i class="fe-gear"></i> Scegli Anno Scolastico</a>
+              <i class="fe-chevron-down"></i>
+            </li>
+            <li>
+              <a>2020-2021</a>
+            </li>
+            <li>
+              <a>2021-2022</a>
+            </li>
+          </ul>
+        </section>
+      </nav>
+    </header>
+    <main>
+      <div class="stripes"></div>
+      <section id="menu-navigation" aria-expanded="true">
+        <nav>
+          <ul>
+            <li>
+              <i class="fas fa-home"></i>
+              <a href="index.html">Home</a>
+            </li>
+            <li>
+              <i class="fas fa-book"></i>
+              <a href="compiti.html">Compiti</a>
+            </li>
+            <li>
+              <i class="fas fa-award"></i>
+              <a href="voti.html">Voti</a>
+            </li>
+            <li>
+              <i class="fas fa-book-reader"></i>
+              <a href="materiale.html">Materiale</a>
+            </li>
+            <li>
+              <i class="fas fa-calendar-alt"></i>
+              <a href="frequenze.html">Frequenze</a>
+            </li>
+          </ul>
+        </nav>
+      </section>
+      <section id="home">
+        <section id="sommario">
+          <article class="box">
+            <h3>Andamento</h3>
+            <h4>6.75<i class="fe-chevron-up"></i></h4>
+            <a>View All</a>
+          </article>
+          <article class="box">
+            <h3>Frequenza</h3>
+            <h4>85%</h4>
+            <a>View All</a>
+          </article>
+          <article class="box">
+            <h3>Compiti</h3>
+            <h4>4/6</h4>
+            <a>View All</a>
+          </article>
+        </section>
+        <section id="prestazioni">
+          <article class="box">
+            <p>
+              lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
+              quod. lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Quisquam, quod. lorem ipsum dolor sit amet consectetur adipisicing
+              elit. Quisquam, quod.
+            </p>
+          </article>
+        </section>
+        <aside id="lezioni">
+          <article class="box">
+            <div class="v-line"></div>
+            <aside>
+              <h5>
+                Matematica
+                <i class="fe-bar-chart-2"></i>
+              </h5>
+              <h6>8:00 - 10:00</h6>
+              <p>Mario Rossi</p>
+            </aside>
+          </article>
+          <article class="box">
+            <div class="v-line"></div>
+            <aside>
+              <h5>
+                Matematica
+                <i class="fe-bar-chart-2"></i>
+              </h5>
+              <h6>8:00 - 10:00</h6>
+              <p>Mario Rossi</p>
+            </aside>
+          </article>
+          <article class="box">
+            <div class="v-line"></div>
+            <aside>
+              <h5>
+                Matematica
+                <i class="fe-bar-chart-2"></i>
+              </h5>
+              <h6>8:00 - 10:00</h6>
+              <p>Mario Rossi</p>
+            </aside>
+          </article>
+          <article class="box">
+            <div class="v-line"></div>
+            <aside>
+              <h5>
+                Matematica
+                <i class="fe-bar-chart-2"></i>
+              </h5>
+              <h6>8:00 - 10:00</h6>
+              <p>Mario Rossi</p>
+            </aside>
+          </article>
+          <article class="box">
+            <div class="v-line"></div>
+            <aside>
+              <h5>
+                Matematica
+                <i class="fe-bar-chart-2"></i>
+              </h5>
+              <h6>8:00 - 10:00</h6>
+              <p>Mario Rossi</p>
+            </aside>
+          </article>
+        </aside>
+      </section>
+    </main>
+    <footer>
+      <p>Designed by Alessandro Bruno & Alessandra Di Bella</p>
+    </footer>
+    <script
+      src="https://kit.fontawesome.com/457d18dfca.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/other/visual-compiti.js"></script>
+    <script src="assets/js/other/user-navigation.js"></script>
+    <script src="assets/js/other/menu-navigation.js"></script>
+    <script src="assets/js/other/change-theme.js"></script>
+    <script src="assets/js/other/loader.js"></script>
+    <script src="assets/js/other/logout.js"></script>
+  </body>
+</html>
