@@ -1,0 +1,357 @@
+/* Importing external CSS files */
+@import url(fonts.css); /* importing fonts.css */
+@import url(config.css); /* importing config.css */
+@import url(icons.css); /* importing icons.css */
+* {
+  cursor: default;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  transition: all 0.3s ease-in-out;
+  color: var(--dark-color);
+  font-family: "Lexend", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+a:hover,
+.fe-menu:hover,
+.fe-menu:focus,
+.fe-menu:active,
+.fe-minimize-2:hover,
+.fe-minimize-2:focus,
+.fe-minimize-2:active {
+  cursor: pointer;
+}
+
+body {
+  background-color: var(--stripes);
+  color: var(--dark-color);
+}
+
+i:hover {
+  cursor: pointer;
+  color: var(--primary-color);
+  transform: scale(1.3);
+}
+
+section#menu-navigation {
+  width: 100%;
+  z-index: 100;
+  position: fixed;
+  justify-content: center;
+  height: 100%;
+  padding: 5vh 8vw;
+  top: 0;
+  background-color: var(--white-color);
+}
+section#menu-navigation section {
+  display: flex;
+  justify-content: space-between;
+}
+section#menu-navigation section i {
+  font-size: 2em;
+  top: 0;
+  left: 0;
+}
+section#menu-navigation nav {
+  padding: 20vh 0;
+}
+section#menu-navigation nav ul {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  text-align: center;
+}
+section#menu-navigation nav ul li {
+  font-size: 8.5vw;
+  font-weight: 900;
+  list-style: none;
+  color: var(--black-color);
+}
+section#menu-navigation nav ul li:hover {
+  cursor: pointer;
+  color: var(--primary-color);
+}
+section#menu-navigation[aria-expanded=false] {
+  display: none;
+}
+section#menu-navigation[aria-expanded=true] {
+  display: block;
+}
+
+img {
+  width: 10%;
+  height: auto;
+}
+
+i {
+  color: var(--black-color);
+}
+i:focus {
+  outline: none;
+}
+
+hr {
+  border-color: transparent;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 5vh 8vw;
+}
+
+main i {
+  font-size: 2em;
+}
+main section#home {
+  display: flex;
+  flex-direction: column;
+}
+main section#home #welcome {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 95dvh;
+  padding: 8vh 8vw;
+}
+main section#home #welcome .welcome-items {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5vw;
+  text-align: center;
+}
+main section#home #welcome .welcome-items h1 {
+  font-size: 13.6vw;
+  color: var(--black-color);
+  font-weight: 900;
+}
+main section#home #welcome .welcome-items img {
+  width: 17vw;
+  height: auto;
+  display: none;
+}
+main section#home #welcome .fe-arrow-down {
+  animation: moveUpDown 1.5s infinite;
+  font-size: 4em;
+}
+main section#home section {
+  padding: 5vh 12vw;
+}
+main section#home section h2 {
+  font-size: 8.5vw;
+  font-weight: 900;
+  color: var(--black-color);
+  margin-bottom: 10px;
+}
+main section#home section p {
+  font-size: 4.25vw;
+  font-weight: 300;
+  color: var(--dark-color);
+}
+main section #editData {
+  display: flex;
+  flex-direction: column;
+  padding: 5vh 8vw;
+  width: 100%;
+  width: 100%;
+}
+main section #editData #addModal {
+  z-index: 100;
+  position: fixed;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  padding: 5vh 8vw;
+  top: 0;
+  left: 0;
+  background-color: var(--white-color);
+}
+main section #editData #addModal section {
+  display: flex;
+  justify-content: space-between;
+}
+main section #editData #addModal section button {
+  background-color: none;
+  border: none;
+  background-color: transparent;
+}
+main section #editData #addModal section button:hover {
+  cursor: pointer;
+  transform: scale(1.3);
+}
+main section #editData #addModal section i {
+  font-size: 2em;
+  top: 0;
+  left: 0;
+  color: var(--dark-color);
+}
+main section #editData #addModal form {
+  display: flex;
+  flex-direction: column;
+}
+main section #editData #addModal form article {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 5vh 0;
+}
+main section #editData #addModal form input {
+  margin: 5px 0 50px 0;
+  border: none;
+  padding: 10px;
+  background-color: var(--light-success-color);
+  border-radius: 10px 10px 0 0;
+  border-bottom: 3px solid var(--success-color);
+}
+main section #editData #addModal form input:hover {
+  cursor: pointer;
+}
+main section #editData #addModal form input:focus {
+  outline: none;
+  cursor: text;
+}
+main section #editData #addModal form input:invalid {
+  border-color: var(--danger-color);
+  outline: none;
+  background-color: var(--light-danger-color);
+}
+main section #editData #addModal[aria-expanded=false] {
+  display: none;
+}
+main section #editData #addModal[aria-expanded=true] {
+  display: block;
+}
+main section #editData h1 {
+  font-size: 6.8vw;
+  font-weight: 900;
+  color: var(--black-color);
+  margin-bottom: 10px;
+}
+main section #editData table {
+  display: block;
+  overflow-x: auto;
+  border-collapse: collapse;
+  border-radius: 10px;
+  border: 1px solid var(--light-color);
+  padding: 10px;
+  box-shadow: inset 0 0 10px 2px rgba(90, 90, 94, 0.1);
+}
+main section #editData table thead {
+  border-bottom: 1px solid var(--dark-color);
+}
+main section #editData table td,
+main section #editData table th {
+  padding: 8px;
+  text-align: center;
+}
+main section #editData table tr:nth-child(even) {
+  background-color: var(--light-color);
+}
+main section #editData table tbody .actions {
+  display: flex;
+  justify-content: center;
+  gap: 3px;
+}
+main section #editData table tbody .actions button {
+  background-color: transparent;
+  border: none;
+}
+main section #editData table tbody .actions button i {
+  font-size: 1.5em;
+}
+main section #editData table tbody .actions button i.fe-edit {
+  color: var(--warning-color);
+}
+main section #editData table tbody .actions button i.fe-trash-2 {
+  color: var(--danger-color);
+}
+main section #editData .add-table {
+  padding: 10px;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--primary-color);
+  z-index: 99;
+  position: fixed;
+  bottom: 3vh;
+  right: 3vw;
+}
+main section #editData .add-table:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+main section #editData .add-table i {
+  color: var(--white-color);
+}
+
+@keyframes moveUpDown {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(30px);
+  }
+}
+@media screen and (min-width: 768px) {
+  main section#home #welcome .welcome-items h1 {
+    font-size: 8.5vw;
+  }
+  main section#home #welcome .welcome-items img {
+    display: block;
+  }
+  main section#home section h2 {
+    font-size: 2.8333333333vw;
+  }
+  main section#home section p {
+    font-size: 1.619047619vw;
+  }
+  main section#editData table {
+    display: inline-table;
+    border: none;
+  }
+  main section#editData h1 {
+    font-size: 3.0909090909vw;
+  }
+  main section#editData #addModal form section i,
+  main section#editData #addModal form section button i {
+    font-size: 3em;
+  }
+  main section#editData #addModal form section i:hover,
+  main section#editData #addModal form section button i:hover {
+    color: var(--primary-color);
+  }
+  section#menu-navigation nav ul li {
+    font-size: 3.5789473684vw;
+  }
+  main i,
+  section#menu-navigation section i {
+    font-size: 3em;
+  }
+}
+.stripes {
+  width: 100%;
+  height: 96%;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  position: absolute;
+  transform: skewY(-15deg);
+  transform-origin: 0px 0;
+  background: var(--stripes);
+  box-shadow: 0 3px 20px 5px rgba(143, 143, 143, 0.1);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 3px;
+  background-color: var(--light-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color);
+}

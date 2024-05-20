@@ -1,5 +1,5 @@
 test-color {
-    color: #1b1b1b;;
+    color: #167e12;
 }
 
 @mixin data-theme($theme: light) {
@@ -11,11 +11,11 @@ test-color {
         /* ? Fonts */
 
         /* ! Colors */
-        --stripes: #fcfcfc;
+        --stripes: #fafafa;
 
-        --primary-color: #F15A24;
+        --primary-color: #1967D2;
         --secondary-color: #6D57C7;
-        --warning-color: #1967D2;
+        --warning-color: #E84118;
         --info-color: #17A2B8;
         --danger-color: #d32c3d;
         --success-color: #167e12;
@@ -42,8 +42,8 @@ test-color {
         --light-secondary-color: #{lighten(#6D57C7, 40%)};
         --light-warning-color: #{lighten(#E84118, 30%)};
         --light-info-color: #{lighten(#17A2B8, 40%)};
-        --light-danger-color: #{lighten(#d32c3d, 48%)};
-        --light-success-color: #{lighten(#1b9137, 63%)};
+        --light-danger-color: #{lighten(#d32c3d, 30%)};
+        --light-success-color: #{lighten(#1b9137, 40%)};
 
         --dark-primary-color: #{darken(#1967D2, 40%)};
         --dark-secondary-color: #{darken(#6D57C7, 40%)};
@@ -59,25 +59,26 @@ test-color {
         /* ? Fonts */
 
         /* ! Colors */
-        --stripes: #{darken(#fcfcfc, 100%)};
+        --stripes: #{darken(#fafafa, 100%)};
 
-        --primary-color: #F15A24;
-        --secondary-color: #6D57C7;
-        --warning-color: #1967D2;
-        --info-color: #17A2B8;
-        --danger-color: #d32c3d;
-        --success-color: #167e12;
-        --dark-color: #eeeeee;
-        --light-color: #1b1b1b;
-        --white-color: #000;
+        --primary-color: #{darken(#1967D2, 35%)};
+        --secondary-color: #{darken(#6D57C7, 30%)};
+        --warning-color: #{darken(#E84118, 30%)};
+        --info-color: #{darken(#17A2B8, 30%)};
+        --danger-color: #{darken(#d32c3d, 30%)};
+        --success-color: #{darken(#1b9137, 20%)};
+        --dark-color: #{darken(#423F3F, 40%)};
+        --light-color: #{darken(#eeeeee, 90%)};
+        --white-color: #{darken(#fafafa, 90%)};
         --black-color: #fff;
+        --dark-color: #fff;
 
-        --border-primary-color: #1967D2;
-        --border-secondary-color: #6D57C7;
-        --border-warning-color: #E84118;
-        --border-info-color: #17A2B8;
-        --border-danger-color: #d32c3d;
-        --border-success-color: #167e12;
+        --border-primary-color: #{lighten(#1967D2, 50%)};
+        --border-secondary-color: #{lighten(#6D57C7, 50%)};
+        --border-warning-color: #{lighten(#E84118, 50%)};
+        --border-info-color: #{lighten(#17A2B8, 50%)};
+        --border-danger-color: #{lighten(#d32c3d, 50%)};
+        --border-success-color: #{lighten(#1b9137, 50%)};
 
         --old-primary-color: #1967D2;
         --old-secondary-color: #6D57C7;
@@ -86,19 +87,19 @@ test-color {
         --old-danger-color: #d32c3d;
         --old-success-color: #167e12;
 
-        --light-primary-color: #{lighten(#1967D2, 30%)};
-        --light-secondary-color: #{lighten(#6D57C7, 40%)};
-        --light-warning-color: #{lighten(#E84118, 30%)};
-        --light-info-color: #{lighten(#17A2B8, 40%)};
-        --light-danger-color: #{lighten(#d32c3d, 30%)};
-        --light-success-color: #{lighten(#1b9137, 40%)};
+        --light-primary-color: #{lighten(darken(#1967D2, 40%), 40%)};
+        --light-secondary-color: #{lighten(darken(#6D57C7, 40%), 40%)};
+        --light-warning-color: #{lighten(darken(#E84118, 40%), 40%)};
+        --light-info-color: #{lighten(darken(#17A2B8, 40%), 40%)};
+        --light-danger-color: #{lighten(darken(#d32c3d, 40%), 40%)};
+        --light-success-color: #{lighten(darken(#1b9137, 40%), 35%)};
 
-        --dark-primary-color: #{darken(#1967D2, 40%)};
-        --dark-secondary-color: #{darken(#6D57C7, 40%)};
-        --dark-warning-color: #{darken(#E84118, 40%)};
-        --dark-info-color: #{darken(#17A2B8, 40%)};
-        --dark-danger-color: #{darken(#d32c3d, 40%)};
-        --dark-success-color: #{darken(#1b9137, 40%)};
+        --dark-primary-color: #{darken(lighten(#1967D2, 40%), 40%)};
+        --dark-secondary-color: #{darken(lighten(#6D57C7, 40%), 40%)};
+        --dark-warning-color: #{darken(lighten(#E84118, 40%), 40%)};
+        --dark-info-color: #{darken(lighten(#17A2B8, 40%), 40%)};
+        --dark-danger-color: #{darken(lighten(#d32c3d, 40%), 40%)};
+        --dark-success-color: #{darken(lighten(#1b9137, 40%), 40%)};
 
     }
   }

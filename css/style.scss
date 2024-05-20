@@ -1,0 +1,383 @@
+/* Importing external CSS files */
+@import url(fonts.css); /* importing fonts.css */
+@import url(config.css); /* importing config.css */
+@import url(icons.css); /* importing icons.css */
+
+* {
+  cursor: default;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  transition: all 0.3s ease-in-out;
+  color: var(--dark-color);
+  font-family: "Lexend", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+a:hover,
+.fe-menu:hover,
+.fe-menu:focus,
+.fe-menu:active,
+.fe-minimize-2:hover,
+.fe-minimize-2:focus,
+.fe-minimize-2:active {
+  cursor: pointer;
+}
+
+body {
+  background-color: var(--stripes);
+  color: var(--dark-color);
+}
+
+i:hover {
+  cursor: pointer;
+  color: var(--primary-color);
+  transform: scale(1.3);
+}
+
+section#menu-navigation {
+  width: 100%;
+  z-index: 100;
+  position: fixed;
+  justify-content: center;
+  height: 100%;
+  padding: 5vh 8vw;
+  top: 0;
+  background-color: var(--white-color);
+  section {
+    display: flex;
+    justify-content: space-between;
+    i {
+      font-size: 2em;
+      top: 0;
+      left: 0;
+    }
+  }
+  nav {
+    padding: 20vh 0;
+    ul {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      gap: 20px;
+      justify-content: center;
+      text-align: center;
+      li {
+        font-size: (100vw-32vw)/8;
+        font-weight: 900;
+        list-style: none;
+        color: var(--black-color);
+        &:hover {
+          cursor: pointer;
+          color: var(--primary-color);
+        }
+      }
+    }
+  }
+  &[aria-expanded="false"] {
+    display: none;
+  }
+  &[aria-expanded="true"] {
+    display: block;
+  }
+}
+
+img {
+  width: 10%;
+  height: auto;
+}
+i {
+  color: var(--black-color);
+  &:focus {
+    outline: none;
+  }
+}
+hr {
+  border-color: transparent;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 5vh 8vw;
+}
+
+main {
+  i {
+    font-size: 2em;
+  }
+  section {
+    &#home {
+      display: flex;
+      flex-direction: column;
+      #welcome {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 95dvh;
+        padding: 8vh 8vw;
+        .welcome-items {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 5vw;
+          text-align: center;
+          h1 {
+            font-size: (100vw-32vw)/5;
+            color: var(--black-color);
+            font-weight: 900;
+          }
+          img {
+            width: (100vw-32vw)/4;
+            height: auto;
+            display: none;
+          }
+        }
+        .fe-arrow-down {
+          animation: moveUpDown 1.5s infinite;
+          font-size: 4em;
+        }
+      }
+      section {
+        padding: 5vh 12vw;
+        h2 {
+          font-size: (100vw-32vw)/8;
+          font-weight: 900;
+          color: var(--black-color);
+          margin-bottom: 10px;
+        }
+        p {
+          font-size: (100vw-32vw)/16;
+          font-weight: 300;
+          color: var(--dark-color);
+        }
+      }
+      #about {
+      }
+    }
+    #editData {
+      display: flex;
+      flex-direction: column;
+      padding: 5vh 8vw;
+      width: 100%;
+      width: 100%;
+      #addModal {
+        z-index: 100;
+        position: fixed;
+        justify-content: center;
+        height: 100%;
+        width: 100%;
+        padding: 5vh 8vw;
+        top: 0;
+        left: 0;
+        background-color: var(--white-color);
+        section {
+          display: flex;
+          justify-content: space-between;
+          button {
+            background-color: none;
+            border: none;
+            background-color: transparent;
+            &:hover {
+              cursor: pointer;
+              transform: scale(1.3);
+            }
+          }
+          i {
+            font-size: 2em;
+            top: 0;
+            left: 0;
+            color: var(--dark-color);
+          }
+        }
+        form {
+          display: flex;
+          flex-direction: column;
+          article {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            padding: 5vh 0;
+          }
+          input {
+            margin: 5px 0 50px 0;
+            border: none;
+            padding: 10px;
+            background-color: var(--light-success-color);
+            border-radius: 10px 10px 0 0;
+            border-bottom: 3px solid var(--success-color);
+            &:hover {
+              cursor: pointer;
+            }
+            &:focus {
+              outline: none;
+              cursor: text;
+            }
+            &:invalid {
+              border-color: var(--danger-color);
+              outline: none;
+              background-color: var(--light-danger-color);
+            }
+          }
+        }
+        &[aria-expanded="false"] {
+          display: none;
+        }
+        &[aria-expanded="true"] {
+          display: block;
+        }
+      }
+      h1 {
+        font-size: (100vw-32vw)/10;
+        font-weight: 900;
+        color: var(--black-color);
+        margin-bottom: 10px;
+      }
+      table {
+        display: block;
+        overflow-x: auto;
+        border-collapse: collapse;
+        border-radius: 10px;
+        border: 1px solid var(--light-color);
+        padding: 10px;
+        box-shadow: inset 0 0 10px 2px rgba(90, 90, 94, 0.1);
+        thead {
+          border-bottom: 1px solid var(--dark-color);
+        }
+        td,
+        th {
+          padding: 8px;
+          text-align: center;
+        }
+        tr:nth-child(even) {
+          background-color: var(--light-color);
+        }
+        tbody .actions {
+          display: flex;
+          justify-content: center;
+          gap: 3px;
+          button {
+            background-color: transparent;
+            border: none;
+            i {
+              font-size: 1.5em;
+              &.fe-edit {
+                color: var(--warning-color);
+              }
+              &.fe-trash-2 {
+                color: var(--danger-color);
+              }
+            }
+          }
+        }
+      }
+      .add-table {
+        padding: 10px;
+        border-radius: 50%;
+        border: none;
+        background-color: var(--primary-color);
+        z-index: 99;
+        position: fixed;
+        bottom: 3vh;
+        right: 3vw;
+        &:hover {
+          cursor: pointer;
+          transform: scale(1.2);
+        }
+        i {
+          color: var(--white-color);
+        }
+      }
+    }
+  }
+}
+
+@keyframes moveUpDown {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(30px);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  main {
+    section#home {
+      #welcome {
+        .welcome-items {
+          h1 {
+            font-size: (100vw-32vw)/8;
+          }
+          img {
+            display: block;
+          }
+        }
+      }
+      section {
+        h2 {
+          font-size: (100vw-32vw)/24;
+        }
+        p {
+          font-size: (100vw-32vw)/42;
+        }
+      }
+    }
+    section#editData {
+      table {
+        display: inline-table;
+        border: none;
+      }
+      h1 {
+        font-size: (100vw-32vw)/22;
+      }
+      #addModal form section i,
+      #addModal form section button i {
+        font-size: 3em;
+        &:hover {
+          color: var(--primary-color)
+        }
+      }
+    }
+  }
+  section#menu-navigation {
+    nav {
+      ul {
+        li {
+          font-size: (100vw-32vw)/19;
+        }
+      }
+    }
+  }
+  main i,
+  section#menu-navigation section i {
+    font-size: 3em;
+  }
+}
+
+.stripes {
+  width: 100%;
+  height: 96%;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  position: absolute;
+  transform: skewY(-15deg);
+  transform-origin: 0px 0;
+  background: var(--stripes);
+  box-shadow: 0 3px 20px 5px rgba(143, 143, 143, 0.1);
+}
+
+
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 3px;
+  background-color: var(--light-color);
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color);
+}
