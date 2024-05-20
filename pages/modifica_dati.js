@@ -32,20 +32,35 @@ export default {
       this.newTelefono = "";
       this.aggiornaLocalStorage();
     },
+    ricorda(index) {
+      var editNome = document.getElementById("editNome");
+      var editCognome = document.getElementById("editCognome");
+      var editEmail = document.getElementById("editEmail");
+      var editTelefono = document.getElementById("editTelefono");
+
+      editNome.value = this.dati[index].nome;
+      editCognome.value = this.dati[index].cognome;
+      editEmail.value = this.dati[index].email;
+      editTelefono.value = this.dati[index].telefono;
+    },
+
     modifica(index) {
-      let nome = prompt("Modifica il nome:", this.dati[index].nome);
-      let cognome = prompt("Modifica il cognome:", this.dati[index].cognome);
-      let email = prompt("Modifica l'email:", this.dati[index].email);
-      let telefono = prompt("Modifica il telefono:", this.dati[index].telefono);
-      if (nome && cognome && email && telefono) {
-        this.dati.splice(index, 1, {
-          nome: nome,
-          cognome: cognome,
-          email: email,
-          telefono: telefono,
-        });
-        this.aggiornaLocalStorage();
-      }
+      var editNome = document.getElementById("editNome");
+      var editCognome = document.getElementById("editCognome");
+      var editEmail = document.getElementById("editEmail");
+      var editTelefono = document.getElementById("editTelefono");
+
+      console.log("A" + this.dati);
+      console.log("B"+ index);
+      console.log("c" + this.dati[index]);
+      this.dati.splice(index, 1 ,{
+        nome: editNome.value,
+        cognome: editCognome.value,
+        email: editEmail.value,
+        telefono: editTelefono.value,
+      });
+
+      this.aggiornaLocalStorage();
     },
     elimina(index) {
       this.dati.splice(index, 1);
@@ -56,11 +71,31 @@ export default {
     },
   },
   template: `
-  <section id="editData">
-        <section id="addModal" aria-expanded="false">
+  <section id="dataTable">
+  <section id="editData" aria-expanded="false">
+        <form @submit.prevent="modifica">
+          <section>
+              <i class="fe-x"></i>
+              <button @click="modifica(index)" type="submit">
+                <i class="fe-save"></i>
+              </button>                
+          </section>
+          <article>
+          <h3>Nome:</h3>
+          <input id="editNome" placeholder="modifica nome" required />
+          <h3>Cognome:</h3>
+          <input id="editCognome" placeholder="modifica cognome" required />
+          <h3>Email:</h3>
+          <input id="editEmail" placeholder="modifica email" required />
+          <h3>Telefono:</h3>
+          <input id="editTelefono" placeholder="modifica telefono" required />
+          </article>
+          </form>   
+      </section>
+        <section id="addData" aria-expanded="false">
           <form @submit.prevent="aggiungi">
             <section>
-                <i class="fe-x"></i>
+                <i class="fe-x" id="add"></i>
                 <button type="submit">
                   <i class="fe-save"></i>
                 </button>                
@@ -76,7 +111,7 @@ export default {
             <input v-model="newTelefono" placeholder="Inserisci telefono" required />
             </article>
             </form>   
-  </section>
+        </section>
   <h1> {{ title }} </h1>
     <table>
     <thead>
@@ -90,12 +125,12 @@ export default {
     </thead>
     <tbody>
       <tr v-for="(dato, index) in dati" :key="index">
-        <td>{{ dato.nome }}</td>
-        <td>{{ dato.cognome }}</td>
-        <td>{{ dato.email }}</td>
-        <td>{{ dato.telefono }}</td>
+        <td contenteditable id="editNome">{{ dato.nome }}</td>
+        <td contenteditable id="editCognome">{{ dato.cognome }}</td>
+        <td contenteditable id="editEmail">{{ dato.email }}</td>
+        <td contenteditable id="editTelefono">{{ dato.telefono }}</td>
         <td class="actions">
-          <button @click="modifica(index)">
+          <button @click="ricorda(index)">
             <i class="fe-edit"></i>
           </button>
           <button @click="elimina(index)">
@@ -106,7 +141,7 @@ export default {
     </tbody>
     </table>
     <button class="add-table">
-      <i class="fe-plus"></i>
+      <i class="fe-plus" id="add"></i>
     </button>
  </section>
     `,

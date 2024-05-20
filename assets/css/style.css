@@ -154,14 +154,17 @@ main section#home section p {
   font-weight: 300;
   color: var(--dark-color);
 }
-main section #editData {
+main section #jsonTable {
   display: flex;
   flex-direction: column;
   padding: 5vh 8vw;
-  width: 100%;
-  width: 100%;
 }
-main section #editData #addModal {
+main section #dataTable {
+  display: flex;
+  flex-direction: column;
+  padding: 5vh 8vw;
+}
+main section #dataTable #editData {
   z-index: 100;
   position: fixed;
   justify-content: center;
@@ -172,36 +175,36 @@ main section #editData #addModal {
   left: 0;
   background-color: var(--white-color);
 }
-main section #editData #addModal section {
+main section #dataTable #editData section {
   display: flex;
   justify-content: space-between;
 }
-main section #editData #addModal section button {
+main section #dataTable #editData section button {
   background-color: none;
   border: none;
   background-color: transparent;
 }
-main section #editData #addModal section button:hover {
+main section #dataTable #editData section button:hover {
   cursor: pointer;
   transform: scale(1.3);
 }
-main section #editData #addModal section i {
+main section #dataTable #editData section i {
   font-size: 2em;
   top: 0;
   left: 0;
   color: var(--dark-color);
 }
-main section #editData #addModal form {
+main section #dataTable #editData form {
   display: flex;
   flex-direction: column;
 }
-main section #editData #addModal form article {
+main section #dataTable #editData form article {
   display: flex;
   flex-direction: column;
   width: 100%;
   padding: 5vh 0;
 }
-main section #editData #addModal form input {
+main section #dataTable #editData form input {
   margin: 5px 0 50px 0;
   border: none;
   padding: 10px;
@@ -209,31 +212,97 @@ main section #editData #addModal form input {
   border-radius: 10px 10px 0 0;
   border-bottom: 3px solid var(--success-color);
 }
-main section #editData #addModal form input:hover {
+main section #dataTable #editData form input:hover {
   cursor: pointer;
 }
-main section #editData #addModal form input:focus {
+main section #dataTable #editData form input:focus {
   outline: none;
   cursor: text;
 }
-main section #editData #addModal form input:invalid {
+main section #dataTable #editData form input:invalid {
   border-color: var(--danger-color);
   outline: none;
   background-color: var(--light-danger-color);
 }
-main section #editData #addModal[aria-expanded=false] {
+main section #dataTable #editData[aria-expanded=false] {
   display: none;
 }
-main section #editData #addModal[aria-expanded=true] {
+main section #dataTable #editData[aria-expanded=true] {
   display: block;
 }
-main section #editData h1 {
+main section #dataTable #addData {
+  z-index: 100;
+  position: fixed;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  padding: 5vh 8vw;
+  top: 0;
+  left: 0;
+  background-color: var(--white-color);
+}
+main section #dataTable #addData section {
+  display: flex;
+  justify-content: space-between;
+}
+main section #dataTable #addData section button {
+  background-color: none;
+  border: none;
+  background-color: transparent;
+}
+main section #dataTable #addData section button:hover {
+  cursor: pointer;
+  transform: scale(1.3);
+}
+main section #dataTable #addData section i {
+  font-size: 2em;
+  top: 0;
+  left: 0;
+  color: var(--dark-color);
+}
+main section #dataTable #addData form {
+  display: flex;
+  flex-direction: column;
+}
+main section #dataTable #addData form article {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 5vh 0;
+}
+main section #dataTable #addData form input {
+  margin: 5px 0 50px 0;
+  border: none;
+  padding: 10px;
+  background-color: var(--light-success-color);
+  border-radius: 10px 10px 0 0;
+  border-bottom: 3px solid var(--success-color);
+}
+main section #dataTable #addData form input:hover {
+  cursor: pointer;
+}
+main section #dataTable #addData form input:focus {
+  outline: none;
+  cursor: text;
+}
+main section #dataTable #addData form input:invalid {
+  border-color: var(--danger-color);
+  outline: none;
+  background-color: var(--light-danger-color);
+}
+main section #dataTable #addData[aria-expanded=false] {
+  display: none;
+}
+main section #dataTable #addData[aria-expanded=true] {
+  display: block;
+}
+main section #dataTable h1 {
   font-size: 6.8vw;
   font-weight: 900;
   color: var(--black-color);
   margin-bottom: 10px;
 }
-main section #editData table {
+main section #dataTable table {
   display: block;
   overflow-x: auto;
   border-collapse: collapse;
@@ -242,36 +311,36 @@ main section #editData table {
   padding: 10px;
   box-shadow: inset 0 0 10px 2px rgba(90, 90, 94, 0.1);
 }
-main section #editData table thead {
+main section #dataTable table thead {
   border-bottom: 1px solid var(--dark-color);
 }
-main section #editData table td,
-main section #editData table th {
+main section #dataTable table td,
+main section #dataTable table th {
   padding: 8px;
   text-align: center;
 }
-main section #editData table tr:nth-child(even) {
+main section #dataTable table tr:nth-child(even) {
   background-color: var(--light-color);
 }
-main section #editData table tbody .actions {
+main section #dataTable table tbody .actions {
   display: flex;
   justify-content: center;
   gap: 3px;
 }
-main section #editData table tbody .actions button {
+main section #dataTable table tbody .actions button {
   background-color: transparent;
   border: none;
 }
-main section #editData table tbody .actions button i {
+main section #dataTable table tbody .actions button i {
   font-size: 1.5em;
 }
-main section #editData table tbody .actions button i.fe-edit {
+main section #dataTable table tbody .actions button i.fe-edit {
   color: var(--warning-color);
 }
-main section #editData table tbody .actions button i.fe-trash-2 {
+main section #dataTable table tbody .actions button i.fe-trash-2 {
   color: var(--danger-color);
 }
-main section #editData .add-table {
+main section #dataTable .add-table {
   padding: 10px;
   border-radius: 50%;
   border: none;
@@ -281,11 +350,11 @@ main section #editData .add-table {
   bottom: 3vh;
   right: 3vw;
 }
-main section #editData .add-table:hover {
+main section #dataTable .add-table:hover {
   cursor: pointer;
   transform: scale(1.2);
 }
-main section #editData .add-table i {
+main section #dataTable .add-table i {
   color: var(--white-color);
 }
 
@@ -310,19 +379,19 @@ main section #editData .add-table i {
   main section#home section p {
     font-size: 1.619047619vw;
   }
-  main section#editData table {
+  main section#dataTable table {
     display: inline-table;
     border: none;
   }
-  main section#editData h1 {
+  main section#dataTable h1 {
     font-size: 3.0909090909vw;
   }
-  main section#editData #addModal form section i,
-  main section#editData #addModal form section button i {
+  main section#dataTable #addData form section i,
+  main section#dataTable #addData form section button i {
     font-size: 3em;
   }
-  main section#editData #addModal form section i:hover,
-  main section#editData #addModal form section button i:hover {
+  main section#dataTable #addData form section i:hover,
+  main section#dataTable #addData form section button i:hover {
     color: var(--primary-color);
   }
   section#menu-navigation nav ul li {
@@ -354,4 +423,4 @@ main section #editData .add-table i {
 
 ::-webkit-scrollbar-thumb {
   background-color: var(--primary-color);
-}
+}/*# sourceMappingURL=style.css.map */
