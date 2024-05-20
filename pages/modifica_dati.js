@@ -125,10 +125,10 @@ export default {
     </thead>
     <tbody>
       <tr v-for="(dato, index) in dati" :key="index">
-        <td contenteditable id="editNome">{{ dato.nome }}</td>
-        <td contenteditable id="editCognome">{{ dato.cognome }}</td>
-        <td contenteditable id="editEmail">{{ dato.email }}</td>
-        <td contenteditable id="editTelefono">{{ dato.telefono }}</td>
+        <td>{{ dato.nome }}</td>
+        <td>{{ dato.cognome }}</td>
+        <td>{{ dato.email }}</td>
+        <td>{{ dato.telefono }}</td>
         <td class="actions">
           <button @click="ricorda(index)">
             <i class="fe-edit"></i>
