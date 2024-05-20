@@ -97,7 +97,7 @@ export default {
             <section>
                 <i class="fe-x" id="add"></i>
                 <button type="submit">
-                  <i class="fe-save"></i>
+                  <i class="fe-save">Save</i>
                 </button>                
             </section>
             <article>
@@ -110,7 +110,8 @@ export default {
             <h3>Telefono:</h3>
             <input v-model="newTelefono" placeholder="Inserisci telefono" required />
             </article>
-            </form>   
+            </form>  
+            <p id="done">Aggiunto!</p> 
         </section>
   <h1> {{ title }} </h1>
     <table>
