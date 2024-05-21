@@ -107,11 +107,17 @@ header {
 main i {
   font-size: 2em;
 }
+main section h1 {
+  font-size: 6.8vw;
+  font-weight: 900;
+  color: var(--black-color);
+  margin-bottom: 10px;
+}
 main section table {
   display: block;
   overflow-x: auto;
   border-collapse: collapse;
-  border-radius: 10px;
+  border-radius: 0 0 10px 10px;
   border: 10px solid var(--black-color);
   padding: 5px;
   box-shadow: inset 0 0 10px 2px rgba(90, 90, 94, 0.1);
@@ -121,12 +127,17 @@ main section table thead {
 }
 main section table td,
 main section table th {
-  padding: 3px;
+  padding: 8px;
   align-items: center;
   text-align: center;
 }
-main section table tr {
-  background-color: var(--white-color);
+main section table td a,
+main section table th a {
+  text-decoration: none;
+}
+main section table td a:hover,
+main section table th a:hover {
+  color: var(--primary-color);
 }
 main section table tr:nth-child(even) {
   background-color: var(--light-color);
@@ -141,7 +152,7 @@ main section table tbody .actions button {
   border: none;
 }
 main section table tbody .actions button i {
-  font-size: 1.5em;
+  font-size: 2em;
 }
 main section table tbody .actions button i.fe-edit {
   color: var(--warning-color);
@@ -202,7 +213,6 @@ main section #jsonTable {
   padding: 5vh 8vw;
 }
 main section #jsonTable input {
-  margin: 5px 0 5px 0;
   border: none;
   padding: 10px;
   background-color: var(--light-color);
@@ -347,29 +357,11 @@ main section #dataTable #addData form input:invalid {
   outline: none;
   background-color: var(--light-danger-color);
 }
-main section #dataTable #addData #done {
-  font-size: 1.5111111111vw;
-  font-weight: 300;
-  color: var(--dark-color);
-  position: absolute;
-  top: 12%;
-  right: 6%;
-  visibility: hidden;
-}
-main section #dataTable #addData #done[visible] {
-  visibility: visible;
-}
 main section #dataTable #addData[aria-expanded=false] {
   display: none;
 }
 main section #dataTable #addData[aria-expanded=true] {
   display: block;
-}
-main section #dataTable h1 {
-  font-size: 6.8vw;
-  font-weight: 900;
-  color: var(--black-color);
-  margin-bottom: 10px;
 }
 main section #dataTable .add-table {
   padding: 10px;
@@ -405,7 +397,7 @@ main section #dataTable .add-table i {
     display: block;
   }
   main section#home section h2 {
-    font-size: 2.8333333333vw;
+    font-size: 3.4vw;
   }
   main section#home section p {
     font-size: 1.619047619vw;
@@ -414,8 +406,9 @@ main section #dataTable .add-table i {
     display: inline-table;
     border: none;
   }
-  main section h1 {
-    font-size: 3.0909090909vw;
+  main section #dataTable h1,
+  main section #jsonTable h1 {
+    font-size: 3.4vw;
   }
   main section #addData form section i,
   main section #addData form section button i {
@@ -454,4 +447,15 @@ main section #dataTable .add-table i {
 
 ::-webkit-scrollbar-thumb {
   background-color: var(--primary-color);
-}/*# sourceMappingURL=style.css.map */
+}
+
+#notification {
+  font-size: 1.5111111111vw;
+  font-weight: 300;
+  color: var(--dark-color);
+  position: absolute;
+  top: 12%;
+  z-index: 101;
+  right: 6%;
+  background-color: var(--success-color);
+}

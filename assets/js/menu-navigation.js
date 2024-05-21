@@ -2,10 +2,13 @@ document.addEventListener("click", function (event) {
   const { target } = event;
   const { tagName, className } = target;
 
-  var add = document.getElementById("add");
-  var edit = document.getElementById("edit");
-  
+  const notification = document.getElementById("notification");
+  const notificationAttr = notification.getAttribute("id");
 
+  notification.removeAttribute("hidden");
+  setTimeout(function() {
+    notification.setAttribute("hidden", "true");
+  }, 1000);
 
   if (tagName === "I") {
     const menuNavigation = document.getElementById("menu-navigation");
@@ -26,9 +29,6 @@ document.addEventListener("click", function (event) {
         currentState === "true" ? "false" : "true"
       );
     }
-    if(target.className === "fe-save"){
-      done.setAttribute("visible", "true");
-    }
 
     if (target.id !== "add" && ["fe-x", "fe-edit"].includes(className)) {
       const currentState = editData.getAttribute("aria-expanded");
@@ -38,15 +38,4 @@ document.addEventListener("click", function (event) {
       );
     }
   }
-});
-
-
-const done = document.getElementById("done");
-var icon = document.querySelector('.fe-save');
-
-document.addEventListener('click', function() {
-  done.setAttribute("visible", "true");
-  setTimeout(function() {
-    done.removeAttribute("visible");
-  }, 1000);
 });
