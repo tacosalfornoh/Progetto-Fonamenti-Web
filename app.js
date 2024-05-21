@@ -51,7 +51,6 @@ export default {
         <section id="menu-navigation" aria-expanded="false">
             <section>
                 <i class="fe-minimize-2"></i>
-                <i id="theme-selector" class="fe-moon"></i>
             </section>
             <nav>
                 <ul>

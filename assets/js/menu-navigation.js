@@ -3,12 +3,14 @@ document.addEventListener("click", function (event) {
   const { tagName, className } = target;
 
   const notification = document.getElementById("notification");
-  const notificationAttr = notification.getAttribute("id");
 
-  notification.removeAttribute("hidden");
+  console.log(target.id);
+  if(["fe-save"].includes(className)){
+    notification.removeAttribute("hidden");
   setTimeout(function() {
     notification.setAttribute("hidden", "true");
-  }, 1000);
+  }, 1000); 
+}
 
   if (tagName === "I") {
     const menuNavigation = document.getElementById("menu-navigation");

@@ -1,61 +1,74 @@
-import component2 from '../components/component2.js'
-import functions from '../functions.js'
-import store from '../store.js'
+import component2 from "../components/component2.js";
+import functions from "../functions.js";
+import store from "../store.js";
 
 export default {
-    name: 'Tabella',
-    components: {component2},
+  name: "Tabella",
+  components: { component2 },
 
+  setup() {
+    const { watchEffect, onMounted, ref } = Vue;
+    const title = "Tabella";
+    //get data from server
+    const serverdata = ref(null);
+    const tabledata = ref(null);
+    onMounted(() => {
+      fetch("https://jsonplaceholder.typicode.com/todos")
+        .then((response) => response.json())
+        .then((data) => (serverdata.value = data));
+    });
 
-    setup() {
-        const {watchEffect, onMounted, ref} = Vue;    
-        const title = "Tabella";
-        //get data from server
-        const serverdata = ref(null);
-        const tabledata = ref(null);
-        onMounted(() => {            
-            fetch('https://jsonplaceholder.typicode.com/todos')
-            .then(response => response.json())
-            .then(data => serverdata.value = data);  
-         
-        })
+    //search
+    watchEffect(() => {
+      if (serverdata.value) {
+        if (store.searchString) {
+          tabledata.value = serverdata.value.filter(function (finder) {
+            return JSON.stringify(finder).includes(store.searchString);
+          });
+        } else {
+          tabledata.value = serverdata.value;
+        }
+      }
+    });
 
+    //table sort
+    let sortByColumn = ref(null);
+    watchEffect(() => {
+      if (serverdata.value) {
+        if (!sortByColumn.value && store.sortedColumn) {
+          serverdata.value.sort(
+            functions.sort(store.sortedColumn, store.sortedOrder)
+          );
+        }
+        if (sortByColumn.value == store.sortedColumn) {
+          if (store.sortedOrder == "asc") {
+            store.sortedOrder = "desc";
+          } else {
+            store.sortedOrder = "asc";
+          }
+          serverdata.value.sort(
+            functions.sort(sortByColumn.value, store.sortedOrder)
+          );
+          store.sortedColumn = sortByColumn.value;
+        } else {
+          serverdata.value.sort(functions.sort(sortByColumn.value, "asc"));
+          store.sortedOrder = "asc";
+          store.sortedColumn = sortByColumn.value;
+        }
+        sortByColumn.value = null;
+      }
+    });
 
-        //search
-        watchEffect(() => {
-            if (serverdata.value) {
-                if (store.searchString) {
-                    tabledata.value = serverdata.value.filter(function (el) {return el.title.includes(store.searchString);  });
-                } else {tabledata.value = serverdata.value};
-            }            
-        })
+    return { tabledata, store, sortByColumn, title };
+  },
 
-
-        //table sort
-        let sortByColumn = ref(null);
-        watchEffect(() => {
-            if (serverdata.value) {
-                if (!sortByColumn.value && store.sortedColumn) {serverdata.value.sort(functions.sort(store.sortedColumn, store.sortedOrder));}
-                if (sortByColumn.value == store.sortedColumn) {
-                    if (store.sortedOrder == "asc") {store.sortedOrder = "desc"} else {store.sortedOrder = "asc"}
-                    serverdata.value.sort(functions.sort(sortByColumn.value, store.sortedOrder)); store.sortedColumn = sortByColumn.value;
-                } else {
-                    serverdata.value.sort(functions.sort(sortByColumn.value, "asc")); store.sortedOrder="asc"; store.sortedColumn = sortByColumn.value;                   
-                }
-                sortByColumn.value = null;         
-            }
-        })
-
-
-        return {tabledata, store, sortByColumn, title}
-    },
-
-    
-    template: `
+  template: `
     <section id="jsonTable">
-        <h1>{{ title }}</h1>
-        <input v-model="store.searchString" placeholder="Search title">
-        <small v-if="tabledata && store.searchString">{{ tabledata.length }} item(s) found</small> 
+        <section id="table-title">
+          <h1>{{ title }}</h1>
+          <small v-if="tabledata && store.searchString"><b>{{ tabledata.length }}</b> corrispondenza/e.</small>
+        </section>
+        <input v-model="store.searchString" placeholder="Cerca...">
         <table>
         <thead>
             <tr>
