@@ -1,7 +1,3 @@
-import functions from "../functions.js";
-
-const { changeTheme } = functions.methods;
-
 export default {
   methods: {
     // ! clickEvents
@@ -9,7 +5,6 @@ export default {
       window.addEventListener("click", (event) => {
         const { target } = event;
         const { tagName, className } = target;
-        console.log(tagName, className);
         this.changeTheme(target, tagName, className);
         this.arrowUp(className);
         this.arrowDown(className);
