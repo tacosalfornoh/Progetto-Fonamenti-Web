@@ -86,19 +86,19 @@ test-color {
         --old-danger-color: #d32c3d;
         --old-success-color: #167e12;
 
-        --light-primary-color: #{lighten(#F15A24, 30%)};
-        --light-secondary-color: #{lighten(#6D57C7, 40%)};
-        --light-warning-color: #{lighten(#1967D2, 30%)};
-        --light-info-color: #{lighten(#17A2B8, 40%)};
-        --light-danger-color: #{lighten(#d32c3d, 48%)};
-        --light-success-color: #{lighten(#1b9137, 63%)};
+        --light-primary-color: #{darken(#F15A24, 30%)};
+        --light-secondary-color: #{darken(#6D57C7, 40%)};
+        --light-warning-color: #{darken(#1967D2, 30%)};
+        --light-info-color: #{darken(#17A2B8, 40%)};
+        --light-danger-color: #{darken(#d32c3d, 40%)};
+        --light-success-color: #{darken(#1b9137, 63%)};
 
-        --dark-primary-color: #{darken(#F15A24, 40%)};
+        --dark-primary-color: #{lighten(#F15A24, 40%)};
         --dark-secondary-color: #{darken(#6D57C7, 40%)};
         --dark-warning-color: #{darken(#1967D2, 40%)};
-        --dark-info-color: #{darken(#17A2B8, 40%)};
-        --dark-danger-color: #{darken(#d32c3d, 40%)};
-        --dark-success-color: #{darken(#1b9137, 40%)};
+        --dark-info-color: #{lighten(#17A2B8, 40%)};
+        --dark-danger-color: #{lighten(#d32c3d, 40%)};
+        --dark-success-color: #{lighten(#1b9137, 40%)};
 
     }
   }

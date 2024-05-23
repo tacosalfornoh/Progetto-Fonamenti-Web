@@ -1,14 +1,15 @@
 import * as pages from "./pages/index.js";
-import events from "./assets/js/newjs/events.js";
-import store from "./assets/js/newjs/data.js";
+import clickEvents from "./assets/js/events/click.js";
+import scrollEvents from "./assets/js/events/scroll.js";
+import store from "./assets/js/store.js";
 
 export default {
   name: "App",
 
   setup() {
     // ? importing Events for the app
-    events.methods.scroll();
-    events.methods.click();
+    clickEvents.methods.click();
+    scrollEvents.methods.scroll();
     const { watchEffect, onMounted, ref } = Vue;
     const page = ref(null);
 
@@ -74,6 +75,9 @@ export default {
           <section id="content">
             <router-view :is="page ? pages[page] : homepage"></router-view>
           </section>
+          
+  <button id="arrowUp" hidden>
+  <i class="fe-arrow-up"></i>
+</button>
         </main>`,
 };
-

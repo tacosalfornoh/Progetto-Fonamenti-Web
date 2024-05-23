@@ -71,16 +71,16 @@ test-color {
   --old-info-color: #17A2B8;
   --old-danger-color: #d32c3d;
   --old-success-color: #167e12;
-  --light-primary-color: #fac6b4;
-  --light-secondary-color: #f2f0fa;
-  --light-warning-color: #92baf2;
-  --light-info-color: #a7e9f4;
-  --light-danger-color: #fdf7f7;
-  --light-success-color: #f1fcf4;
-  --dark-primary-color: #451504;
+  --light-primary-color: #752407;
+  --light-secondary-color: #1d153e;
+  --light-warning-color: #092449;
+  --light-info-color: #000203;
+  --light-danger-color: #2a090c;
+  --light-success-color: black;
+  --dark-primary-color: #fdeae4;
   --dark-secondary-color: #1d153e;
   --dark-warning-color: #030e1c;
-  --dark-info-color: #000203;
-  --dark-danger-color: #2a090c;
-  --dark-success-color: black;
-}/*# sourceMappingURL=config.css.map */
+  --dark-info-color: #a7e9f4;
+  --dark-danger-color: #f6d5d8;
+  --dark-success-color: #8eeaa4;
+}

@@ -1,5 +1,5 @@
-import functions from "../assets/js/newjs/functions.js";
-import store from "../assets/js/newjs/data.js";
+import functions from "../assets/js/functions.js";
+import store from "../assets/js/store.js";
 
 export default {
   name: "ModificaDati",
@@ -26,6 +26,7 @@ export default {
       serverdata.value = JSON.parse(localStorage.getItem("dati")) || [];
     });
 
+
     //search
     watchEffect(() => {
       if (serverdata.value) {
@@ -45,7 +46,7 @@ export default {
       if (serverdata.value) {
         if (!sortByColumn.value && store.sortedColumn) {
           serverdata.value.sort(
-            functions.sort(store.sortedColumn, store.sortedOrder)
+            functions.methods.sort(store.sortedColumn, store.sortedOrder)
           );
         }
         if (sortByColumn.value == store.sortedColumn) {
@@ -55,11 +56,13 @@ export default {
             store.sortedOrder = "asc";
           }
           serverdata.value.sort(
-            functions.sort(sortByColumn.value, store.sortedOrder)
+            functions.methods.sort(sortByColumn.value, store.sortedOrder)
           );
           store.sortedColumn = sortByColumn.value;
         } else {
-          serverdata.value.sort(functions.sort(sortByColumn.value, "asc"));
+          serverdata.value.sort(
+            functions.methods.sort(sortByColumn.value, "asc")
+          );
           store.sortedOrder = "asc";
           store.sortedColumn = sortByColumn.value;
         }
@@ -70,17 +73,6 @@ export default {
     return { tabledata, store, sortByColumn, title };
   },
   methods: {
-    notiSend(type, message) {
-      const notification = document.getElementById("notification");
-      const progress = document.getElementById("progress");
-      this.notiMessage = message;
-      notification.classList.add(type);
-      progress.classList.add("progress");
-      setTimeout(function () {
-        notification.classList.remove(type);
-        progress.classList.remove("progress");
-      }, 2000);
-    },
     aggiungi: function () {
       if (
         !this.newNome ||
@@ -88,9 +80,9 @@ export default {
         !this.newEmail ||
         !this.newTelefono
       ) {
-        this.notiSend("danger", "Compila tutti i campi!");
+        functions.methods.notificationSend("danger", "Compila tutti i campi!");
       } else {
-        this.notiSend("success", "Dato aggiunto!");
+        functions.methods.notificationSend("success", "Dato aggiunto!");
         var newEntry = {
           nome: this.newNome,
           cognome: this.newCognome,
@@ -132,12 +124,14 @@ export default {
       if (
         !editNome.value ||
         !editCognome.value ||
-        !editEmail.value || !editEmail.checkValidity() ||
-        !editTelefono.value || !editTelefono.checkValidity()
+        !editEmail.value ||
+        !editEmail.checkValidity() ||
+        !editTelefono.value ||
+        !editTelefono.checkValidity()
       ) {
-        this.notiSend("danger", "Compila tutti i campi!");
+        functions.methods.notificationSend("danger", "Compila tutti i campi!");
       } else {
-        this.notiSend("success", "Dato modificato!");
+        functions.methods.notificationSend("success", "Dato modificato!");
         var modified = {
           nome: editNome.value,
           cognome: editCognome.value,
@@ -150,7 +144,7 @@ export default {
       }
     },
     elimina(index) {
-      this.notiSend("success", "Dato eliminato!");
+      functions.methods.notificationSend("success", "Dato eliminato!");
       this.dati.splice(index, 1);
       this.tabledata.splice(index, 1);
       this.aggiornaLocalStorage();
@@ -160,11 +154,11 @@ export default {
     },
   },
   template: `
-  <div id="notification">{{ notiMessage }}
+  <div id="notification">{{ store.notificationMessage }}
     <div id="progress"></div>
   </div> 
   <section id="dataTable">
-  <section id="editData" aria-expanded="false">
+  <section id="editForm" aria-expanded="false">
         <form @submit.prevent="modifica">
           <section>
               <i class="fe-x"></i>
@@ -178,16 +172,16 @@ export default {
           <h3>Cognome:</h3>
           <input id="editCognome" placeholder="Modifica Cognome" />
           <h3>Email:</h3>
-          <input id="editEmail" placeholder="Modifica Email" type="email" />
+          <input id="editEmail" placeholder="Es: esempio@gmail.com" type="email" />
           <h3>Telefono:</h3>
-          <input id="editTelefono" placeholder="Modifica Telefono" pattern="[0-9]{10}" />
+          <input id="editTelefono" placeholder="Es: 3334445555" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" />
           </article>
           </form>   
       </section>
-        <section id="addData" aria-expanded="false">
-          <form id="addForm" @submit.prevent="aggiungi">
+        <section id="addForm" aria-expanded="false">
+          <form @submit.prevent="aggiungi">
             <section>
-                <i class="fe-x" id="add"></i>
+                <i class="fe-x" id="closeAddForm"></i>
                 <button type="submit">
                   <i class="fe-save"></i>
                 </button>                
@@ -198,9 +192,9 @@ export default {
             <h3>Cognome:</h3>
             <input v-model="newCognome" id="insertSurname" placeholder="Inserisci cognome" />
             <h3>Email:</h3>
-            <input v-model="newEmail" id="insertEmail" placeholder="Inserisci email" type="email" />
+            <input v-model="newEmail" id="insertEmail" placeholder="Es: esempio@gmail.com" type="email" />
             <h3>Telefono:</h3>
-            <input v-model="newTelefono" id="insertTelephone" placeholder="Inserisci telefono" pattern="[0-9]{10}" />
+            <input v-model="newTelefono" id="editTelefono" placeholder="Es: 3334445555" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" />
             </article>
             </form>  
         </section>
@@ -236,8 +230,8 @@ export default {
       </tr>
     </tbody>
     </table>
-    <button class="add-table">
-      <i class="fe-plus" id="add"></i>
+    <button class="addNewDataBtn">
+      <i class="fe-plus" id="openAddForm"></i>
     </button>
  </section>
     `,

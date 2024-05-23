@@ -1,5 +1,5 @@
-import functions from "../assets/js/newjs/functions.js";
-import store from "../assets/js/newjs/data.js";
+import functions from "../assets/js/functions.js";
+import store from "../assets/js/store.js";
 
 export default {
   name: "Tabella",
@@ -34,7 +34,7 @@ export default {
       if (serverdata.value) {
         if (!sortByColumn.value && store.sortedColumn) {
           serverdata.value.sort(
-            functions.sort(store.sortedColumn, store.sortedOrder)
+            functions.methods.sort(store.sortedColumn, store.sortedOrder)
           );
         }
         if (sortByColumn.value == store.sortedColumn) {
@@ -44,7 +44,7 @@ export default {
             store.sortedOrder = "asc";
           }
           serverdata.value.sort(
-            functions.sort(sortByColumn.value, store.sortedOrder)
+            functions.methods.sort(sortByColumn.value, store.sortedOrder)
           );
           store.sortedColumn = sortByColumn.value;
         } else {

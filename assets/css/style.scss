@@ -118,6 +118,23 @@ main {
   i {
     font-size: 2em;
   }
+  #arrowUp {
+    padding: 10px;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--primary-color);
+    z-index: 99;
+    position: fixed;
+    bottom: 3vh;
+    right: 3vw;
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.2);
+    }
+    i {
+      color: var(--white-color);
+    }
+  }
   section {
     h1 {
       font-size: (100vw-32vw)/10;
@@ -147,7 +164,6 @@ main {
       overflow-x: auto;
       border-collapse: collapse;
       border-radius: 0 0 10px 10px;
-      padding: 5px;
       thead {
         background-color: var(--primary-color);
         display: table;
@@ -171,9 +187,6 @@ main {
       }
       tbody {
         tr {
-          display: table;
-          width: 100%;
-          table-layout: fixed;
           &:nth-child(odd) {
             background-color: var(--white-color);
           }
@@ -251,23 +264,6 @@ main {
         }
       }
     }
-    #arrowUp{
-      padding: 10px;
-        border-radius: 50%;
-        border: none;
-        background-color: var(--primary-color);
-        z-index: 99;
-        position: fixed;
-        bottom: 3vh;
-        right: 3vw;
-        &:hover {
-          cursor: pointer;
-          transform: scale(1.2);
-        }
-        i {
-          color: var(--white-color);
-        }
-    }
 
     #jsonTable {
       display: flex;
@@ -278,7 +274,7 @@ main {
       display: flex;
       flex-direction: column;
       padding: 5vh 8vw;
-      #editData {
+      #editForm {
         z-index: 100;
         position: fixed;
         justify-content: center;
@@ -337,7 +333,7 @@ main {
           display: block;
         }
       }
-      #addData {
+      #addForm {
         z-index: 100;
         position: fixed;
         justify-content: center;
@@ -379,24 +375,12 @@ main {
             margin: 5px 0 50px 0;
             border: none;
             padding: 10px;
-            background-color: var(--light-success-color);
+            background-color: var(--light-color);
             border-radius: 10px 10px 0 0;
-            border-bottom: 3px solid var(--success-color);
-            &[value=""] {
-              border-color: var(--danger-color);
-              outline: none;
-              background-color: var(--light-danger-color);
-            }
-            &:not([value]) {
-              border-color: var(--info-color);
-              outline: none;
-              background-color: var(--light-info-color);
-
-            }
-            &:invalid {
-              border-color: var(--danger-color);
-              outline: none;
-              background-color: var(--light-danger-color);
+            border: 3px solid transparent;
+            border-bottom: 3px solid var(--primary-color);
+            &:focus {
+              border: 3px solid var(--primary-color);
             }
           }
         }
@@ -407,7 +391,7 @@ main {
           display: block;
         }
       }
-      .add-table {
+      .addNewDataBtn {
         padding: 10px;
         border-radius: 50%;
         border: none;
