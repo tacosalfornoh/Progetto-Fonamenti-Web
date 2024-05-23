@@ -1,13 +1,3 @@
-window.addEventListener('scroll', function() {
-  const arrowUp = document.getElementById("arrowUp");
-  if (window.scrollY > document.body.offsetHeight / 3) {
-    arrowUp.removeAttribute("hidden");
-  } else {
-    arrowUp.setAttribute('hidden', 'true');   
-  }
-
-});
-
 document.addEventListener("click", function (event) {
   const { target } = event;
   const { tagName, className } = target;

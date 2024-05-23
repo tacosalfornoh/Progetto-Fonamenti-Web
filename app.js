@@ -1,17 +1,18 @@
-import homepage from "./pages/home.js";
 import * as pages from "./pages/index.js";
-import store from "./store.js";
-
+import events from "./assets/js/newjs/events.js";
+import store from "./assets/js/newjs/data.js";
 
 export default {
   name: "App",
-  components: Object.assign({ homepage }, pages),
 
   setup() {
+    // ? importing Events for the app
+    events.methods.scroll();
+    events.methods.click();
     const { watchEffect, onMounted, ref } = Vue;
     const page = ref(null);
 
-    //store management: save $variables to localstorage
+    // * store management: save $variables to localstorage
     onMounted(() => {
       window.addEventListener("beforeunload", () => {
         Object.keys(store).forEach(function (key) {

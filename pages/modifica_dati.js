@@ -1,11 +1,8 @@
-import component3 from "../components/component3.js";
-import component2 from "../components/component2.js";
-import functions from "../functions.js";
-import store from "../store.js";
+import functions from "../assets/js/newjs/functions.js";
+import store from "../assets/js/newjs/data.js";
 
 export default {
   name: "ModificaDati",
-  components: { component3, component2 },
 
   data() {
     return {

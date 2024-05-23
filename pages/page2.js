@@ -1,11 +1,8 @@
-import component2 from "../components/component2.js";
-import functions from "../functions.js";
-import store from "../store.js";
+import functions from "../assets/js/newjs/functions.js";
+import store from "../assets/js/newjs/data.js";
 
 export default {
   name: "Tabella",
-  components: { component2 },
-
   setup() {
     const { watchEffect, onMounted, ref } = Vue;
     const title = "Tabella";
