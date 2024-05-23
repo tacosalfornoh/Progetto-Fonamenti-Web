@@ -16,11 +16,12 @@ export default {
       dati: JSON.parse(localStorage.getItem("dati")) || [],
       globalIndex: null,
       datatable: null,
+      notiMessage: null,
     };
   },
   setup() {
     const { ref, onMounted, watchEffect } = Vue;
-    const title = "Modifica Dati";
+    const title = "ModificaDati";
     //get data from server
     const serverdata = ref(null);
     const tabledata = ref(null);
@@ -44,16 +45,6 @@ export default {
     //table sort
     let sortByColumn = ref(null);
     watchEffect(() => {
-      console.log("sortByColumn.value");
-      console.log(sortByColumn.value);
-      console.log("store.sortedColumn");
-      console.log(store.sortedColumn);
-      console.log("sortedOrder");
-      console.log(store.sortedOrder);
-      console.log("serverdata");
-      console.log(serverdata.value);
-      console.log("tabledata");
-      console.log(tabledata.value);
       if (serverdata.value) {
         if (!sortByColumn.value && store.sortedColumn) {
           serverdata.value.sort(
@@ -82,22 +73,43 @@ export default {
     return { tabledata, store, sortByColumn, title };
   },
   methods: {
-    aggiungi() {
-      var newEntry = {
-        nome: this.newNome,
-        cognome: this.newCognome,
-        email: this.newEmail,
-        telefono: this.newTelefono,
-      };
+    notiSend(type, message) {
+      const notification = document.getElementById("notification");
+      const progress = document.getElementById("progress");
+      this.notiMessage = message;
+      notification.classList.add(type);
+      progress.classList.add("progress");
+      setTimeout(function () {
+        notification.classList.remove(type);
+        progress.classList.remove("progress");
+      }, 2000);
+    },
+    aggiungi: function () {
+      if (
+        !this.newNome ||
+        !this.newCognome ||
+        !this.newEmail ||
+        !this.newTelefono
+      ) {
+        this.notiSend("danger", "Compila tutti i campi!");
+      } else {
+        this.notiSend("success", "Dato aggiunto!");
+        var newEntry = {
+          nome: this.newNome,
+          cognome: this.newCognome,
+          email: this.newEmail,
+          telefono: this.newTelefono,
+        };
 
-      this.dati.push(newEntry);
-      this.tabledata.push(newEntry);
+        this.dati.push(newEntry);
+        this.tabledata.push(newEntry);
 
-      this.newNome = "";
-      this.newCognome = "";
-      this.newEmail = "";
-      this.newTelefono = "";
-      this.aggiornaLocalStorage();
+        this.newNome = "";
+        this.newCognome = "";
+        this.newEmail = "";
+        this.newTelefono = "";
+        this.aggiornaLocalStorage();
+      }
     },
     ricorda(index) {
       var editNome = document.getElementById("editNome");
@@ -120,18 +132,28 @@ export default {
       var editCognome = document.getElementById("editCognome");
       var editEmail = document.getElementById("editEmail");
       var editTelefono = document.getElementById("editTelefono");
-      var modified = {
-        nome: editNome.value,
-        cognome: editCognome.value,
-        email: editEmail.value,
-        telefono: editTelefono.value,
-      };
-      this.dati.splice(this.globalIndex, 1, modified);
-      this.tabledata.splice(this.globalIndex, 1, modified);
-
-      this.aggiornaLocalStorage();
+      if (
+        !editNome.value ||
+        !editCognome.value ||
+        !editEmail.value || !editEmail.checkValidity() ||
+        !editTelefono.value || !editTelefono.checkValidity()
+      ) {
+        this.notiSend("danger", "Compila tutti i campi!");
+      } else {
+        this.notiSend("success", "Dato modificato!");
+        var modified = {
+          nome: editNome.value,
+          cognome: editCognome.value,
+          email: editEmail.value,
+          telefono: editTelefono.value,
+        };
+        this.dati.splice(this.globalIndex, 1, modified);
+        this.tabledata.splice(this.globalIndex, 1, modified);
+        this.aggiornaLocalStorage();
+      }
     },
     elimina(index) {
+      this.notiSend("success", "Dato eliminato!");
       this.dati.splice(index, 1);
       this.tabledata.splice(index, 1);
       this.aggiornaLocalStorage();
@@ -141,7 +163,9 @@ export default {
     },
   },
   template: `
-  <div id="notification" hidden>Fatto!</div> 
+  <div id="notification">{{ notiMessage }}
+    <div id="progress"></div>
+  </div> 
   <section id="dataTable">
   <section id="editData" aria-expanded="false">
         <form @submit.prevent="modifica">
@@ -153,18 +177,18 @@ export default {
           </section>
           <article>
           <h3>Nome:</h3>
-          <input id="editNome" placeholder="Modifica Nome" required />
+          <input id="editNome" placeholder="Modifica Nome" />
           <h3>Cognome:</h3>
-          <input id="editCognome" placeholder="Modifica Cognome" required />
+          <input id="editCognome" placeholder="Modifica Cognome" />
           <h3>Email:</h3>
-          <input id="editEmail" placeholder="Modifica Email" type="email" required />
+          <input id="editEmail" placeholder="Modifica Email" type="email" />
           <h3>Telefono:</h3>
-          <input id="editTelefono" placeholder="Modifica Telefono" pattern="[0-9]{10}" required />
+          <input id="editTelefono" placeholder="Modifica Telefono" pattern="[0-9]{10}" />
           </article>
           </form>   
       </section>
         <section id="addData" aria-expanded="false">
-          <form @submit.prevent="aggiungi">
+          <form id="addForm" @submit.prevent="aggiungi">
             <section>
                 <i class="fe-x" id="add"></i>
                 <button type="submit">
@@ -173,13 +197,13 @@ export default {
             </section>
             <article>
             <h3>Nome:</h3>
-            <input v-model="newNome" placeholder="Inserisci nome" required />
+            <input v-model="newNome" id="insertName" placeholder="Inserisci nome"/>
             <h3>Cognome:</h3>
-            <input v-model="newCognome" placeholder="Inserisci cognome" required />
+            <input v-model="newCognome" id="insertSurname" placeholder="Inserisci cognome" />
             <h3>Email:</h3>
-            <input v-model="newEmail" placeholder="Inserisci email" required />
+            <input v-model="newEmail" id="insertEmail" placeholder="Inserisci email" type="email" />
             <h3>Telefono:</h3>
-            <input v-model="newTelefono" placeholder="Inserisci telefono" required />
+            <input v-model="newTelefono" id="insertTelephone" placeholder="Inserisci telefono" pattern="[0-9]{10}" />
             </article>
             </form>  
         </section>
@@ -188,7 +212,6 @@ export default {
     <small v-if="tabledata && store.searchString"><b>{{ tabledata.length }}</b> corrispondenza/e.</small>
     </section>
     <input v-model="store.searchString" placeholder="Cerca...">
-  
     <table>
     <thead>
       <tr>

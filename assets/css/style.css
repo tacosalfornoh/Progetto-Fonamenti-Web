@@ -77,9 +77,12 @@ section#menu-navigation nav ul li {
   font-size: 8.5vw;
   font-weight: 900;
   list-style: none;
+}
+section#menu-navigation nav ul li a {
+  text-decoration: none;
   color: var(--black-color);
 }
-section#menu-navigation nav ul li:hover {
+section#menu-navigation nav ul li a:hover {
   cursor: pointer;
   color: var(--primary-color);
 }
@@ -209,7 +212,7 @@ main section#home #welcome {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 95dvh;
+  height: 80dvh;
   padding: 8vh 8vw;
 }
 main section#home #welcome .welcome-items {
@@ -246,6 +249,23 @@ main section#home section p {
   font-size: 4.25vw;
   font-weight: 300;
   color: var(--dark-color);
+}
+main section #arrowUp {
+  padding: 10px;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--primary-color);
+  z-index: 99;
+  position: fixed;
+  bottom: 3vh;
+  right: 3vw;
+}
+main section #arrowUp:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+main section #arrowUp i {
+  color: var(--white-color);
 }
 main section #jsonTable {
   display: flex;
@@ -363,6 +383,16 @@ main section #dataTable #addData form input {
   background-color: var(--light-success-color);
   border-radius: 10px 10px 0 0;
   border-bottom: 3px solid var(--success-color);
+}
+main section #dataTable #addData form input[value=""] {
+  border-color: var(--danger-color);
+  outline: none;
+  background-color: var(--light-danger-color);
+}
+main section #dataTable #addData form input:not([value]) {
+  border-color: var(--info-color);
+  outline: none;
+  background-color: var(--light-info-color);
 }
 main section #dataTable #addData form input:invalid {
   border-color: var(--danger-color);
@@ -502,12 +532,66 @@ main section #dataTable .add-table i {
 }
 
 #notification {
-  font-size: 1.5111111111vw;
-  font-weight: 300;
-  color: var(--dark-color);
+  font-size: 0.8em;
+  font-weight: 600;
+  color: var(--success-color);
   position: fixed;
-  top: 10px;
+  top: 5vh;
+  right: -100vw;
   z-index: 101;
-  right: 10px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 10px;
+}
+#notification .progress {
+  margin-top: 5px;
+  width: 100%;
+  height: 5px;
+  animation: notification 2s linear;
+}
+#notification.success {
+  color: var(--success-color);
+  background-color: var(--light-success-color);
+  right: 8vw;
+}
+#notification.success .progress {
   background-color: var(--success-color);
+}
+#notification.danger {
+  color: var(--danger-color);
+  background-color: var(--light-danger-color);
+  right: 8vw;
+}
+#notification.danger .progress {
+  background-color: var(--danger-color);
+}
+#notification.warning {
+  color: var(--warning-color);
+  background-color: var(--light-warning-color);
+  right: 8vw;
+}
+#notification.warning .progress {
+  background-color: var(--warning-color);
+}
+#notification.info {
+  color: var(--info-color);
+  background-color: var(--light-info-color);
+  right: 8vh;
+}
+#notification.info .progress {
+  background-color: var(--info-color);
+}
+
+@keyframes notification {
+  0% {
+    -webkit-clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+            clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+  }
+  100% {
+    -webkit-clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
+            clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
+  }
 }/*# sourceMappingURL=style.css.map */

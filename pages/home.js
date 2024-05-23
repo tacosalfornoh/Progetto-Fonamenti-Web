@@ -1,5 +1,5 @@
 export default {
-  name: "Home",
+  name: "/",
 
   setup() {
     const title = "Home page";
@@ -58,5 +58,8 @@ export default {
         </p>
       </section>
   </section>
+  <button id="arrowUp" hidden>
+    <i class="fe-arrow-up"></i>
+  </button>
     `,
 };

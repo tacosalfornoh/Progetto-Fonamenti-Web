@@ -1,12 +1,4 @@
 export default {
-
-    //get url parameter (used in Page2)
-    getUrlParam(key) {
-        var searchParams = new URLSearchParams(window.location.search);
-        return searchParams.get(key);
-    },
-
-    
     //sorting array of objects (used in Component3)
     sort(key, order = 'asc') {
         return function compare(a,b) {

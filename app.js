@@ -54,14 +54,14 @@ export default {
             </section>
             <nav>
                 <ul>
-                  <li v-on:click="page = ''">
-                    Home
+                  <li>
+                    <router-link to="/">Home</router-link>
                   </li>
-                  <template v-for="file, path in pages" key="file.name">
-                    <li v-on:click="page = path">
-                      {{ file.name }}
+                  <template v-for="page, path in pages" key="page.name">
+                    <li>
+                    <router-link :to="path">{{ page.name }}</router-link>
                     </li>
-                  </template>  
+                  </template>   
                 </ul>  
             </nav>           
         </section>
@@ -71,7 +71,8 @@ export default {
           <i id="theme-selector" class="fe-moon"></i>
         </header>
           <section id="content">
-            <component :is="page || 'homepage'"></component>
+            <router-view :is="page ? pages[page] : homepage"></router-view>
           </section>
         </main>`,
 };
+

@@ -1,21 +1,34 @@
+window.addEventListener('scroll', function() {
+  const arrowUp = document.getElementById("arrowUp");
+  if (window.scrollY > document.body.offsetHeight / 3) {
+    arrowUp.removeAttribute("hidden");
+  } else {
+    arrowUp.setAttribute('hidden', 'true');   
+  }
+
+});
+
 document.addEventListener("click", function (event) {
   const { target } = event;
   const { tagName, className } = target;
-
-  const notification = document.getElementById("notification");
-
-  console.log(target.id);
-  if(["fe-save"].includes(className)){
-    notification.removeAttribute("hidden");
-  setTimeout(function() {
-    notification.setAttribute("hidden", "true");
-  }, 1000); 
-}
 
   if (tagName === "I") {
     const menuNavigation = document.getElementById("menu-navigation");
     const addData = document.getElementById("addData");
     const editData = document.getElementById("editData");
+    console.log(menuNavigation);
+    if("fe-arrow-down" === className) {
+      window.scrollTo({
+        top: about.offsetTop,
+        behavior: "smooth",
+      });
+    }
+    if("fe-arrow-up" === className) {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }
 
     if (menuNavigation && ["fe-menu", "fe-minimize-2"].includes(className)) {
       const currentState = menuNavigation.getAttribute("aria-expanded");

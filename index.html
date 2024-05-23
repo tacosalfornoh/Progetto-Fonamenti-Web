@@ -7,15 +7,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="assets/css/style.css" />
     <!-- Vue.js 3 -->
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://unpkg.com/vue@3"></script>
+    <!-- Vue Router -->
+    <script src="https://unpkg.com/vue-router@4"></script>
   </head>
   <body data-theme="light">
     <div class="stripes"></div>
     <div id="app"></div>
     <script type="module">
       import app from "./app.js";
+      import router from "./router.js";
       const { createApp } = Vue;
-      createApp(app).mount("#app");
+      createApp(app)
+      .use(router)
+      .mount("#app");
     </script>
     <script src="assets/js/menu-navigation.js"></script>
     <script src="assets/js/change-theme.js"></script>
