@@ -9,10 +9,9 @@ export default {
     //get data from server
     const serverdata = ref(null);
     const tabledata = ref(null);
-    onMounted(() => {
-      fetch("https://jsonplaceholder.typicode.com/todos")
-        .then((response) => response.json())
-        .then((data) => (serverdata.value = data));
+    onMounted(async () => {
+      const response = await fetch("https://jsonplaceholder.typicode.com/todos");
+      serverdata.value = await response.json();
     });
 
     //search
@@ -31,6 +30,7 @@ export default {
     //table sort
     let sortByColumn = ref(null);
     watchEffect(() => {
+      debugger;
       if (serverdata.value) {
         if (!sortByColumn.value && store.sortedColumn) {
           serverdata.value.sort(
@@ -48,7 +48,7 @@ export default {
           );
           store.sortedColumn = sortByColumn.value;
         } else {
-          serverdata.value.sort(functions.sort(sortByColumn.value, "asc"));
+          serverdata.value.sort(functions.methods.sort(sortByColumn.value, "asc"));
           store.sortedOrder = "asc";
           store.sortedColumn = sortByColumn.value;
         }

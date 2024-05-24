@@ -89,10 +89,8 @@ export default {
           email: this.newEmail,
           telefono: this.newTelefono,
         };
-
         this.dati.push(newEntry);
         this.tabledata.push(newEntry);
-
         this.newNome = "";
         this.newCognome = "";
         this.newEmail = "";
@@ -105,6 +103,8 @@ export default {
       var editCognome = document.getElementById("editCognome");
       var editEmail = document.getElementById("editEmail");
       var editTelefono = document.getElementById("editTelefono");
+
+
 
       editNome.value = this.dati[index].nome;
       editNome.ariaPlaceholder = this.dati[index].nome;
