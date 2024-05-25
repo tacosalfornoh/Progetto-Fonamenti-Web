@@ -10,6 +10,10 @@ export default {
       newCognome: "",
       newEmail: "",
       newTelefono: "",
+      editNome: "",
+      editCognome: "",
+      editEmail: "",
+      editTelefono: "",
       dati: JSON.parse(localStorage.getItem("dati")) || [],
       globalIndex: null,
       datatable: null,
@@ -105,7 +109,6 @@ export default {
       var editTelefono = document.getElementById("editTelefono");
 
 
-
       editNome.value = this.dati[index].nome;
       editNome.ariaPlaceholder = this.dati[index].nome;
       editCognome.value = this.dati[index].cognome;
@@ -161,27 +164,27 @@ export default {
   <section id="editForm" aria-expanded="false">
         <form @submit.prevent="modifica">
           <section>
-              <i class="fe-x"></i>
+              <i class="fe-x" @click="openEditForm"></i>
               <button @click="modifica(index)" type="submit">
                 <i class="fe-save"></i>
               </button>                
           </section>
           <article>
           <h3>Nome:</h3>
-          <input id="editNome" placeholder="Modifica Nome" />
+          <input v-model="editNome" id="editNome" placeholder="Modifica Nome" />
           <h3>Cognome:</h3>
-          <input id="editCognome" placeholder="Modifica Cognome" />
+          <input v-model="editCognome" id="editCognome" placeholder="Modifica Cognome" />
           <h3>Email:</h3>
-          <input id="editEmail" placeholder="Es: esempio@gmail.com" type="email" />
+          <input v-model="editEmail" id="editEmail" placeholder="Es: esempio@gmail.com" type="email" />
           <h3>Telefono:</h3>
-          <input id="editTelefono" placeholder="Es: 3334445555" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" />
+          <input v-model="editTelefono" id="editTelefono" placeholder="Es: 3334445555" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" />
           </article>
           </form>   
       </section>
         <section id="addForm" aria-expanded="false">
           <form @submit.prevent="aggiungi">
             <section>
-                <i class="fe-x" id="closeAddForm"></i>
+                <i class="fe-x" @click="openAddForm"></i>
                 <button type="submit">
                   <i class="fe-save"></i>
                 </button>                
@@ -231,7 +234,7 @@ export default {
     </tbody>
     </table>
     <button class="addNewDataBtn">
-      <i class="fe-plus" id="openAddForm"></i>
+      <i class="fe-plus" @click="openAddForm"></i>
     </button>
  </section>
     `,

@@ -158,7 +158,7 @@ main section input:focus {
   cursor: text;
 }
 main section table {
-  display: flex;
+  display: table-caption;
   flex-direction: column;
   overflow-x: auto;
   border-collapse: collapse;
@@ -166,8 +166,6 @@ main section table {
 }
 main section table thead {
   background-color: var(--primary-color);
-  display: table;
-  width: 100%;
 }
 main section table th {
   color: var(--white-color);
@@ -228,6 +226,7 @@ main section#home #welcome {
 }
 main section#home #welcome .welcome-items {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 5vw;
@@ -239,9 +238,8 @@ main section#home #welcome .welcome-items h1 {
   font-weight: 900;
 }
 main section#home #welcome .welcome-items img {
-  width: 17vw;
+  width: 34vw;
   height: auto;
-  display: none;
 }
 main section#home #welcome .fe-arrow-down {
   animation: moveUpDown 1.5s infinite;
@@ -421,10 +419,14 @@ main section #dataTable .addNewDataBtn i {
   main section#home #welcome {
     height: 80vh;
   }
+  main section#home #welcome .welcome-items {
+    flex-direction: row;
+  }
   main section#home #welcome .welcome-items h1 {
     font-size: 6.8vw;
   }
   main section#home #welcome .welcome-items img {
+    width: 8.5vw;
     display: block;
   }
   main section#home section h2 {
@@ -455,11 +457,15 @@ main section #dataTable .addNewDataBtn i {
   }
 }
 @media screen and (orientation: landscape) and (min-width: 768px) {
+  main section#home #welcome .welcome-items {
+    flex-direction: row;
+  }
   main section#home #welcome .welcome-items h1 {
     font-size: 6.8vw;
   }
   main section#home #welcome .welcome-items img {
     display: block;
+    width: 17vw;
   }
   main section#home section h2 {
     font-size: 2.8333333333vw;
