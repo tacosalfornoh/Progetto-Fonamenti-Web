@@ -69,7 +69,7 @@ export default {
         </section>
         <main>
         <header>
-          <i class="fe-menu"></i>
+          <a><i class="fe-menu"></i></a>
           <i id="theme-selector" class="fe-moon"></i>
         </header>
           <section id="content">

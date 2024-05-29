@@ -10,10 +10,7 @@ export default {
       newCognome: "",
       newEmail: "",
       newTelefono: "",
-      editNome: "",
-      editCognome: "",
-      editEmail: "",
-      editTelefono: "",
+      AeditNome: "",
       dati: JSON.parse(localStorage.getItem("dati")) || [],
       globalIndex: null,
       datatable: null,
@@ -119,7 +116,8 @@ export default {
       editTelefono.ariaPlaceholder = this.dati[index].telefono;
       this.globalIndex = index;
     },
-    modifica(index) {
+    modifica() {
+      console.log(this.AeditNome);
       var editNome = document.getElementById("editNome");
       var editCognome = document.getElementById("editCognome");
       var editEmail = document.getElementById("editEmail");
@@ -164,27 +162,27 @@ export default {
   <section id="editForm" aria-expanded="false">
         <form @submit.prevent="modifica">
           <section>
-              <i class="fe-x" @click="openEditForm"></i>
-              <button @click="modifica(index)" type="submit">
+              <i class="fe-x" id="openEditForm"></i>
+              <button @click="modifica()" type="submit">
                 <i class="fe-save"></i>
               </button>                
           </section>
           <article>
           <h3>Nome:</h3>
-          <input v-model="editNome" id="editNome" placeholder="Modifica Nome" />
+          <input id="editNome" placeholder="Modifica Nome" />
           <h3>Cognome:</h3>
-          <input v-model="editCognome" id="editCognome" placeholder="Modifica Cognome" />
+          <input id="editCognome" placeholder="Modifica Cognome" />
           <h3>Email:</h3>
-          <input v-model="editEmail" id="editEmail" placeholder="Es: esempio@gmail.com" type="email" />
+          <input  id="editEmail" placeholder="Es: esempio@gmail.com" type="email" />
           <h3>Telefono:</h3>
-          <input v-model="editTelefono" id="editTelefono" placeholder="Es: 3334445555" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" />
+          <input  id="editTelefono" placeholder="Es: 3334445555" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" />
           </article>
           </form>   
       </section>
         <section id="addForm" aria-expanded="false">
           <form @submit.prevent="aggiungi">
             <section>
-                <i class="fe-x" @click="openAddForm"></i>
+                <i class="fe-x" id="openAddForm"></i>
                 <button type="submit">
                   <i class="fe-save"></i>
                 </button>                
@@ -234,7 +232,7 @@ export default {
     </tbody>
     </table>
     <button class="addNewDataBtn">
-      <i class="fe-plus" @click="openAddForm"></i>
+      <i class="fe-plus" id="openAddForm"></i>
     </button>
  </section>
     `,

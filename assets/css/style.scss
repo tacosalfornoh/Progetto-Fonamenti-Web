@@ -248,6 +248,8 @@ main {
           font-size: 4em;
         }
       }
+      #vantaggi {
+      }
       section {
         padding: 5vh 12vw;
         h2 {
@@ -256,14 +258,22 @@ main {
           color: var(--black-color);
           margin-bottom: 10px;
         }
+        h3 {
+          margin-top: 20px;
+          font-size: (100vw-32vw)/42;
+          font-weight: 900;
+          color: var(--black-color);
+        }
         p {
-          font-size: (100vw-32vw)/16;
+          font-size: (100vw-32vw)/18;
           font-weight: 300;
           color: var(--dark-color);
         }
       }
     }
-
+    #approfondimento {
+      
+    }
     #jsonTable {
       display: flex;
       flex-direction: column;
@@ -315,13 +325,12 @@ main {
             margin: 5px 0 50px 0;
             border: none;
             padding: 10px;
-            background-color: var(--light-success-color);
+            background-color: var(--light-color);
             border-radius: 10px 10px 0 0;
-            border-bottom: 3px solid var(--success-color);
-            &:invalid {
-              border-color: var(--danger-color);
-              outline: none;
-              background-color: var(--light-danger-color);
+            border: 3px solid transparent;
+            border-bottom: 3px solid var(--primary-color);
+            &:focus {
+              border: 3px solid var(--primary-color);
             }
           }
         }
@@ -553,14 +562,14 @@ main {
 }
 
 #notification {
-  font-size: 0.8em;
+  font-size: 1em;
   font-weight: 600;
   color: var(--success-color);
   position: fixed;
   top: 5vh;
   right: -100vw;
   z-index: 101;
-  padding: 10px;
+  padding: 10px 10px 5px 10px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -613,4 +622,8 @@ main {
   100% {
     clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
   }
+}
+
+footer {
+  padding: 5vh 12vw;
 }

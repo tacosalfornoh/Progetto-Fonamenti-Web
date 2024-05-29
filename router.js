@@ -8,8 +8,8 @@ const { createRouter, createWebHistory } = VueRouter;
 const router = createRouter({
     history: createWebHistory(),
     routes: [
-        { path: '/', component: home },
-        { path: '/Approfondimento', component: approfondimento },
+        { path: '/', component: approfondimento },
+        { path: '/Approfondimento', component:  home},
         { path: '/ModificaDati', component: modifica_dati },
         { path: '/Tabella', component: tabella }
     ]

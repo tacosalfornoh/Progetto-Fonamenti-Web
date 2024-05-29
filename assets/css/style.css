@@ -254,8 +254,14 @@ main section#home section h2 {
   color: var(--black-color);
   margin-bottom: 10px;
 }
+main section#home section h3 {
+  margin-top: 20px;
+  font-size: 1.619047619vw;
+  font-weight: 900;
+  color: var(--black-color);
+}
 main section#home section p {
-  font-size: 4.25vw;
+  font-size: 3.7777777778vw;
   font-weight: 300;
   color: var(--dark-color);
 }
@@ -313,14 +319,13 @@ main section #dataTable #editForm form input {
   margin: 5px 0 50px 0;
   border: none;
   padding: 10px;
-  background-color: var(--light-success-color);
+  background-color: var(--light-color);
   border-radius: 10px 10px 0 0;
-  border-bottom: 3px solid var(--success-color);
+  border: 3px solid transparent;
+  border-bottom: 3px solid var(--primary-color);
 }
-main section #dataTable #editForm form input:invalid {
-  border-color: var(--danger-color);
-  outline: none;
-  background-color: var(--light-danger-color);
+main section #dataTable #editForm form input:focus {
+  border: 3px solid var(--primary-color);
 }
 main section #dataTable #editForm[aria-expanded=false] {
   display: none;
@@ -521,14 +526,14 @@ main section #dataTable .addNewDataBtn i {
 }
 
 #notification {
-  font-size: 0.8em;
+  font-size: 1em;
   font-weight: 600;
   color: var(--success-color);
   position: fixed;
   top: 5vh;
   right: -100vw;
   z-index: 101;
-  padding: 10px;
+  padding: 10px 10px 5px 10px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -583,4 +588,7 @@ main section #dataTable .addNewDataBtn i {
     -webkit-clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
             clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
   }
+}
+footer {
+  padding: 5vh 12vw;
 }
