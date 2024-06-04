@@ -35,7 +35,7 @@ export default {
     arrowDown(className) {
       if ("fe-arrow-down" === className) {
         window.scrollTo({
-          top: about.offsetTop,
+          top: introduzione.offsetTop,
           behavior: "smooth",
         });
       }

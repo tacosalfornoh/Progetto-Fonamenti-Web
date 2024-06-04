@@ -178,9 +178,9 @@ export default {
             <h3>Cognome:</h3>
             <input v-model="newCognome" placeholder="Inserisci cognome" />
             <h3>Email:</h3>
-            <input v-model="newEmail" id="editEmail" placeholder="Es: esempio@gmail.com" type="email" />
+            <input v-model="newEmail" placeholder="Es: esempio@gmail.com" type="email" />
             <h3>Telefono:</h3>
-            <input v-model="newTelefono" id="editTelefono" placeholder="Es: 3334445555" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" />
+            <input v-model="newTelefono" placeholder="Es: 3334445555" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" />
             </article>
             </form>  
         </section>

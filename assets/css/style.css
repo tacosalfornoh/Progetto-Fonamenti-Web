@@ -8,7 +8,7 @@
   margin: 0;
   padding: 0;
   transition: all 0.3s ease-in-out;
-  color: var(--dark-color);
+  color: var(--black-color);
   font-family: "Lexend", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
@@ -34,7 +34,7 @@ input:focus {
 
 body {
   background-color: var(--stripes);
-  color: var(--dark-color);
+  color: var(--black-color);
 }
 
 i:hover {
@@ -263,7 +263,49 @@ main section#home section h3 {
 main section#home section p {
   font-size: 3.7777777778vw;
   font-weight: 300;
+  color: var(--black-color);
+}
+main section #approfondimento {
+  padding: 5vh 12vw;
+  display: flex;
+  flex-direction: column;
+}
+main section #approfondimento legend {
+  font-size: 3.0909090909vw;
+  font-weight: 600;
+  border-radius: 10px 10px 0 0;
+  color: var(--white-color);
+  padding: 10px;
+  background-color: var(--primary-color);
+}
+main section #approfondimento code {
+  font-size: 3.0909090909vw;
+  background-color: var(--light-color);
+  box-shadow: inset 0 0 15px 5px rgba(0, 0, 0, 0.1);
   color: var(--dark-color);
+  width: 100%;
+  display: block;
+  padding: 10px;
+  border-radius: 0 0 10px 10px;
+}
+main section #approfondimento code span {
+  color: var(--success-color);
+}
+main section #approfondimento ul h2 {
+  color: var(--primary-color);
+  margin: 10px 0;
+}
+main section #approfondimento ul li {
+  margin-bottom: 5px;
+  font-weight: 300;
+}
+main section #approfondimento ul p {
+  color: var(--primary-color);
+  font-weight: 500;
+}
+main section #approfondimento p {
+  font-weight: 300;
+  margin: 15px 0;
 }
 main section #jsonTable {
   display: flex;
@@ -303,7 +345,6 @@ main section #dataTable #editForm section i {
   font-size: 2em;
   top: 0;
   left: 0;
-  color: var(--dark-color);
 }
 main section #dataTable #editForm form {
   display: flex;
@@ -361,7 +402,7 @@ main section #dataTable #addForm section i {
   font-size: 2em;
   top: 0;
   left: 0;
-  color: var(--dark-color);
+  color: var(--black-color);
 }
 main section #dataTable #addForm form {
   display: flex;
@@ -482,6 +523,19 @@ main section #dataTable .addNewDataBtn i {
     display: inline-table;
     border: none;
   }
+  main section #approfondimento h1 {
+    font-size: 3.4vw;
+  }
+  main section #approfondimento #examples {
+    display: flex;
+    gap: 2vw;
+  }
+  main section #approfondimento #examples legend {
+    font-size: 1.0625vw;
+  }
+  main section #approfondimento #examples code {
+    font-size: 0.7906976744vw;
+  }
   main section #dataTable h1,
   main section #jsonTable h1 {
     font-size: 3.4vw;
@@ -588,10 +642,4 @@ main section #dataTable .addNewDataBtn i {
     -webkit-clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
             clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
   }
-}
-footer {
-  padding: 5vh 12vw;
-  bottom: 0;
-  position: fixed;
-  width: 100%;
 }
