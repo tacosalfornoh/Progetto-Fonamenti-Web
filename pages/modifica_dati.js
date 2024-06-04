@@ -10,7 +10,10 @@ export default {
       newCognome: "",
       newEmail: "",
       newTelefono: "",
-      AeditNome: "",
+      editNome: "",
+      editCognome: "",
+      editEmail: "",
+      editTelefono: "",
       dati: JSON.parse(localStorage.getItem("dati")) || [],
       globalIndex: null,
       datatable: null,
@@ -26,7 +29,6 @@ export default {
     onMounted(() => {
       serverdata.value = JSON.parse(localStorage.getItem("dati")) || [];
     });
-
 
     //search
     watchEffect(() => {
@@ -100,49 +102,32 @@ export default {
       }
     },
     ricorda(index) {
-      var editNome = document.getElementById("editNome");
-      var editCognome = document.getElementById("editCognome");
-      var editEmail = document.getElementById("editEmail");
-      var editTelefono = document.getElementById("editTelefono");
-
-
-      editNome.value = this.dati[index].nome;
-      editNome.ariaPlaceholder = this.dati[index].nome;
-      editCognome.value = this.dati[index].cognome;
-      editCognome.ariaPlaceholder = this.dati[index].cognome;
-      editEmail.value = this.dati[index].email;
-      editEmail.ariaPlaceholder = this.dati[index].email;
-      editTelefono.value = this.dati[index].telefono;
-      editTelefono.ariaPlaceholder = this.dati[index].telefono;
+      this.editNome = this.dati[index].nome;
+      this.editCognome = this.dati[index].cognome;
+      this.editEmail = this.dati[index].email;
+      this.editTelefono = this.dati[index].telefono;
       this.globalIndex = index;
     },
     modifica() {
-      console.log(this.AeditNome);
-      var editNome = document.getElementById("editNome");
-      var editCognome = document.getElementById("editCognome");
-      var editEmail = document.getElementById("editEmail");
-      var editTelefono = document.getElementById("editTelefono");
       if (
-        !editNome.value ||
-        !editCognome.value ||
-        !editEmail.value ||
-        !editEmail.checkValidity() ||
-        !editTelefono.value ||
-        !editTelefono.checkValidity()
+        !this.editNome ||
+        !this.editCognome ||
+        !this.editEmail ||
+        !this.editTelefono
       ) {
         functions.methods.notificationSend("danger", "Compila tutti i campi!");
       } else {
         functions.methods.notificationSend("success", "Dato modificato!");
-        var modified = {
-          nome: editNome.value,
-          cognome: editCognome.value,
-          email: editEmail.value,
-          telefono: editTelefono.value,
-        };
-        this.dati.splice(this.globalIndex, 1, modified);
-        this.tabledata.splice(this.globalIndex, 1, modified);
-        this.aggiornaLocalStorage();
       }
+      var editEntry = {
+        nome: this.editNome,
+        cognome: this.editCognome,
+        email: this.editEmail,
+        telefono: this.editTelefono,
+      };
+      this.dati.splice(this.globalIndex, 1, editEntry);
+      this.tabledata.splice(this.globalIndex, 1, editEntry);
+      this.aggiornaLocalStorage();
     },
     elimina(index) {
       functions.methods.notificationSend("success", "Dato eliminato!");
@@ -169,13 +154,13 @@ export default {
           </section>
           <article>
           <h3>Nome:</h3>
-          <input id="editNome" placeholder="Modifica Nome" />
+          <input v-model="editNome" placeholder="Modifica Nome" />
           <h3>Cognome:</h3>
-          <input id="editCognome" placeholder="Modifica Cognome" />
+          <input v-model="editCognome" placeholder="Modifica Cognome" />
           <h3>Email:</h3>
-          <input  id="editEmail" placeholder="Es: esempio@gmail.com" type="email" />
+          <input v-model="editEmail" placeholder="Es: esempio@gmail.com" type="email" />
           <h3>Telefono:</h3>
-          <input  id="editTelefono" placeholder="Es: 3334445555" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" />
+          <input v-model="editTelefono" placeholder="Es: 3334445555" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" />
           </article>
           </form>   
       </section>
@@ -189,11 +174,11 @@ export default {
             </section>
             <article>
             <h3>Nome:</h3>
-            <input v-model="newNome" id="insertName" placeholder="Inserisci nome"/>
+            <input v-model="newNome" placeholder="Inserisci nome"/>
             <h3>Cognome:</h3>
-            <input v-model="newCognome" id="insertSurname" placeholder="Inserisci cognome" />
+            <input v-model="newCognome" placeholder="Inserisci cognome" />
             <h3>Email:</h3>
-            <input v-model="newEmail" id="insertEmail" placeholder="Es: esempio@gmail.com" type="email" />
+            <input v-model="newEmail" id="editEmail" placeholder="Es: esempio@gmail.com" type="email" />
             <h3>Telefono:</h3>
             <input v-model="newTelefono" id="editTelefono" placeholder="Es: 3334445555" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" />
             </article>

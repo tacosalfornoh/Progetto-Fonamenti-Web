@@ -272,7 +272,6 @@ main {
       }
     }
     #approfondimento {
-      
     }
     #jsonTable {
       display: flex;
@@ -626,4 +625,7 @@ main {
 
 footer {
   padding: 5vh 12vw;
+  bottom: 0;
+  position: fixed;
+  width: 100%;
 }
