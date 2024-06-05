@@ -558,6 +558,9 @@ main {
         #examples {
           display: flex;
           gap: 2vw;
+          section {
+            width: 50%;
+          }
           legend {
             font-size: (100vw-32vw)/64;
             

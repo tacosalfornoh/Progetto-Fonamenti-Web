@@ -530,6 +530,9 @@ main section #dataTable .addNewDataBtn i {
     display: flex;
     gap: 2vw;
   }
+  main section #approfondimento #examples section {
+    width: 50%;
+  }
   main section #approfondimento #examples legend {
     font-size: 1.0625vw;
   }
@@ -642,4 +645,4 @@ main section #dataTable .addNewDataBtn i {
     -webkit-clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
             clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
   }
-}
+}/*# sourceMappingURL=style.css.map */
