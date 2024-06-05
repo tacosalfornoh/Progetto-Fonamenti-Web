@@ -94,11 +94,6 @@ export default {
                 I valori calcolati vengono memorizzati nella cache,
                 evitando ricalcoli non necessari e ottimizzando ulteriormente le prestazioni.</li>
             </ul>
-            <p>Anche l'aggiunta di pub/sub a <b>isEven</b> e <b>parity</b> risolve solo parzialmente
-            i problemi, aumentando ulteriormente la complessità del codice e introducendo
-            nuovi potenziali problemi. In sintesi, l'approccio attuale non è scalabile e
-            richiede una revisione per gestire efficacemente lo stato e le dipendenze
-            nell'applicazione.</p>
     </section>
     </section>
     `,
